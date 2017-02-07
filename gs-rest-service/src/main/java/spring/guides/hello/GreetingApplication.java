@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author dannong
  * @since 2017年01月30日 09:47
  */
-@SpringBootApplication // same as @SpringBootConfiguration/@Configuration @EnableAutoConfiguration @ComponentScan
+@SpringBootApplication // = @SpringBootConfiguration/@Configuration + @EnableAutoConfiguration + @ComponentScan
 public class GreetingApplication {
 
     public static void main(String[] args) {

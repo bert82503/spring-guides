@@ -22,11 +22,13 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+            <!-- Production ready features to help you monitor and manage your application. -->
         </dependency>
         <!-- Add typical dependencies for a web application -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <!-- Support for full-stack web development, including Tomcat and spring-webmvc. -->
         </dependency>
 
         <!-- Test -->
