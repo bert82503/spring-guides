@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>spring.guides</groupId>
+        <artifactId>spring-guides</artifactId>
+        <version>0.1.0</version>
+    </parent>
+
+    <artifactId>spring-boot-quick-start</artifactId>
+    <packaging>jar</packaging>
+
+    <name>spring-boot-quick-start</name>
+    <description>Quick Start of Spring Boot</description>
+    <url>http://projects.spring.io/spring-boot/#quick-start</url>
+
+    <dependencies>
+        <!-- Spring Boot -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <!-- Production ready features to help you monitor and manage your application. -->
+        </dependency>
+        <!-- Add typical dependencies for a web application -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <!-- Support for full-stack web development, including Tomcat and spring-webmvc. -->
+        </dependency>
+    </dependencies>
+</project>
