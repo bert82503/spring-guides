@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>spring.guides</groupId>
+        <groupId>com.springframework</groupId>
         <artifactId>spring-guides</artifactId>
         <version>0.1.0</version>
     </parent>
@@ -15,15 +15,11 @@
 
     <name>gs-rest-service</name>
     <description>Building a RESTful Web Service</description>
-    <url>http://spring.io/guides/gs/rest-service/</url>
+    <url>https://spring.io/guides/gs/rest-service/</url>
+    <!-- https://github.com/spring-guides/gs-rest-service -->
 
     <dependencies>
         <!-- Spring Boot -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-            <!-- Production ready features to help you monitor and manage your application. -->
-        </dependency>
         <!-- Add typical dependencies for a web application -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -35,6 +31,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

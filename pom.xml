@@ -17,8 +17,8 @@
 
 	<name>Spring Guides</name>
 	<description>task-focused Getting Started Guides and Tutorials</description>
-    <url>https://github.com/spring-guides</url>
-    <!-- http://spring.io/guides -->
+    <url>https://spring.io/guides/</url>
+    <!-- https://github.com/spring-guides -->
 
     <modules>
         <module>gs-rest-service</module>
