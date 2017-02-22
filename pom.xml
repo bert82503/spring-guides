@@ -10,14 +10,15 @@
         <version>1.4.4.RELEASE</version>
     </parent>
 
-	<groupId>spring.guides</groupId>
+	<groupId>com.springframework</groupId>
 	<artifactId>spring-guides</artifactId>
 	<version>0.1.0</version>
 	<packaging>pom</packaging>
 
 	<name>Spring Guides</name>
 	<description>task-focused Getting Started Guides and Tutorials</description>
-    <url>http://spring.io/guides</url>
+    <url>https://github.com/spring-guides</url>
+    <!-- http://spring.io/guides -->
 
     <modules>
         <module>gs-rest-service</module>
