@@ -21,6 +21,7 @@
     <!-- https://github.com/spring-guides -->
 
     <modules>
+        <module>spring-boot-quick-start</module>
         <module>gs-rest-service</module>
     </modules>
 
