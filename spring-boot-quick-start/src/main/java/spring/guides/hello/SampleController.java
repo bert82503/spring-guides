@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 示例控制器及入口点。
+ * 示例控制器及应用入口点。
  *
  * @author dannong
  * @since 2017年02月07日 08:38

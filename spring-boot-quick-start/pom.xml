@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>spring.guides</groupId>
+        <groupId>com.springframework</groupId>
         <artifactId>spring-guides</artifactId>
         <version>0.1.0</version>
     </parent>
@@ -15,14 +15,11 @@
     <name>spring-boot-quick-start</name>
     <description>Quick Start of Spring Boot</description>
     <url>http://projects.spring.io/spring-boot/#quick-start</url>
+    <!-- Spring Initializr - Bootstrap your Spring Boot application -->
+    <!-- https://start.spring.io/ -->
 
     <dependencies>
         <!-- Spring Boot -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-            <!-- Production ready features to help you monitor and manage your application. -->
-        </dependency>
         <!-- Add typical dependencies for a web application -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
