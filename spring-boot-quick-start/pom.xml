@@ -15,6 +15,7 @@
     <name>spring-boot-quick-start</name>
     <description>Quick Start of Spring Boot</description>
     <url>http://projects.spring.io/spring-boot/#quick-start</url>
+    <!-- Part II. Getting started - https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started -->
     <!-- Spring Initializr - Bootstrap your Spring Boot application -->
     <!-- https://start.spring.io/ -->
 
@@ -27,4 +28,14 @@
             <!-- Support for full-stack web development, including Tomcat and spring-webmvc. -->
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Package as an executable jar -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
