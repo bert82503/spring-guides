@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.springframework</groupId>
+        <artifactId>spring-guides</artifactId>
+        <version>0.1.0</version>
+    </parent>
+
+    <artifactId>gs-actuator-service</artifactId>
+    <packaging>jar</packaging>
+
+    <name>gs-actuator-service</name>
+    <description>Building a RESTful Web Service with Spring Boot Actuator</description>
+    <url>https://spring.io/guides/gs/actuator-service/</url>
+    <!-- https://github.com/spring-guides/gs-actuator-service -->
+
+    <dependencies>
+        <!-- Spring Boot -->
+        <!-- Add typical dependencies for a web application -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <!-- Support for full-stack web development, including Tomcat and spring-webmvc. -->
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <!-- Production ready features to help you monitor and manage your application. -->
+        </dependency>
+
+        <!-- Test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Package as an executable jar -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
