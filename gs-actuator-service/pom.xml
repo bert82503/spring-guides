@@ -18,7 +18,7 @@
     <!-- https://github.com/spring-guides/gs-actuator-service -->
 
     <dependencies>
-        <!-- Spring Boot -->
+        <!-- ================= Spring Boot ================= -->
         <!-- Add typical dependencies for a web application -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -31,7 +31,7 @@
             <!-- Production ready features to help you monitor and manage your application. -->
         </dependency>
 
-        <!-- Test -->
+        <!-- ================= Test ================= -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

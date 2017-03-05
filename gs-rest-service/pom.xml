@@ -19,7 +19,7 @@
     <!-- https://github.com/spring-guides/gs-rest-service -->
 
     <dependencies>
-        <!-- Spring Boot -->
+        <!-- ================= Spring Boot ================= -->
         <!-- Add typical dependencies for a web application -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -27,7 +27,7 @@
             <!-- Support for full-stack web development, including Tomcat and spring-webmvc. -->
         </dependency>
 
-        <!-- Test -->
+        <!-- ================= Test ================= -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
