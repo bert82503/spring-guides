@@ -28,8 +28,8 @@
         <module>gs-rest-service</module>
         <module>spring-boot-actuator-jmx</module>
         <module>gs-testing-web</module>
-        <module>gs-spring-boot</module>
         <module>spring-boot-getting-started</module>
+        <module>gs-commons</module>
     </modules>
 
     <!-- ================= 源代码管理 ================= -->
@@ -60,6 +60,7 @@
         <!-- ================= 插件管理 ================= -->
         <pluginManagement>
             <plugins>
+                <!-- 指定编译文件的版本和编码 -->
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <configuration>
@@ -68,7 +69,35 @@
                         <encoding>${project.build.sourceEncoding}</encoding>
                     </configuration>
                 </plugin>
+                <!-- 打包同时生成源码 -->
+                <plugin>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
             </plugins>
         </pluginManagement>
+
+        <!-- ================= 所有项目的插件依赖 ================= -->
+        <plugins>
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+
+            <!-- ================= 自动添加 ================= -->
+            <!--<plugin>-->
+                <!--<artifactId>maven-compiler-plugin</artifactId>-->
+            <!--</plugin>-->
+            <!-- Test -->
+            <!--<plugin>-->
+                <!--<artifactId>maven-surefire-plugin</artifactId>-->
+            <!--</plugin>-->
+        </plugins>
 	</build>
 </project>

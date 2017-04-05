@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author dannong
  * @since 2017年01月30日 09:20
  */
-@RestController("greetingController")
+@RestController("greetingController") // = @Controller + @ResponseBody
 @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class GreetingController {
 

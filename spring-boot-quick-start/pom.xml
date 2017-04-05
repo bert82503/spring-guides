@@ -12,7 +12,7 @@
     <artifactId>spring-boot-quick-start</artifactId>
     <packaging>jar</packaging>
 
-    <name>spring-boot-quick-start</name>
+    <name>${project.artifactId}</name>
     <description>Quick Start of Spring Boot</description>
     <url>http://projects.spring.io/spring-boot/#quick-start</url>
     <!-- Part II. Getting started - https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started -->

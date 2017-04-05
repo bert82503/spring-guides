@@ -8,8 +8,10 @@ import org.junit.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import spring.guides.test.AbstractIntegrationTests;
+
 /**
- * 类概述。
+ * Test of {@link org.springframework.boot.actuate.endpoint.Endpoint}s.
  *
  * @author dannong
  * @since 2017年02月25日 09:09

@@ -12,12 +12,19 @@
     <artifactId>gs-actuator-service</artifactId>
     <packaging>jar</packaging>
 
-    <name>gs-actuator-service</name>
+    <name>${project.artifactId}</name>
     <description>Building a RESTful Web Service with Spring Boot Actuator</description>
     <url>https://spring.io/guides/gs/actuator-service/</url>
     <!-- https://github.com/spring-guides/gs-actuator-service -->
 
     <dependencies>
+        <!-- ================= Internal Project ================= -->
+        <dependency>
+            <groupId>com.springframework</groupId>
+            <artifactId>gs-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <!-- ================= Spring Boot ================= -->
         <!-- Add typical dependencies for a web application -->
         <dependency>

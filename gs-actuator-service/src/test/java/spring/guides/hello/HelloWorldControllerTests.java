@@ -8,6 +8,8 @@ import org.junit.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import spring.guides.test.AbstractIntegrationTests;
+
 /**
  * Test of {@link HelloWorldController}.
  *

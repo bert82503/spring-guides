@@ -1,11 +1,11 @@
 package spring.guides.hello;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.Test;
+
+import spring.guides.test.AbstractUnitTests;
 
 /**
  * Test of {@link GreetingController}.
@@ -13,21 +13,17 @@ import org.junit.Test;
  * @author dannong
  * @since 2017年02月21日 23:59
  */
-public class GreetingControllerTests extends AbstractIntegrationTests {
+public class GreetingControllerTests extends AbstractUnitTests {
 
     @Test
     public void noParam() throws Exception {
-        this.mockMvc.perform(get("/greeting"))
-                .andDo(print())
-                .andExpect(status().isOk())
+        this.doGet(get("/greeting"))
                 .andExpect(jsonPath("$.content").value("Hello, World!"));
     }
 
     @Test
     public void param() throws Exception {
-        this.mockMvc.perform(get("/greeting").param("name", "Spring Community"))
-                .andDo(print())
-                .andExpect(status().isOk())
+        this.doGet(get("/greeting").param("name", "Spring Community"))
                 .andExpect(jsonPath("$.content").value("Hello, Spring Community!"));
     }
 
