@@ -7,6 +7,7 @@
 【演示代码示例】[Dubbo demo module](https://github.com/alibaba/dubbo/tree/master/dubbo-demo)
 
 ### 2. 服务提供者
+* [spring-boot-starter-dubbo](https://github.com/wacai/spring-boot-starter-dubbo) of WaCai
 * [服务提供者 - 用户指南](http://dubbo.io/User+Guide-zh.htm#UserGuide-zh-服务提供者)
 
 ### 3. 服务消费者
