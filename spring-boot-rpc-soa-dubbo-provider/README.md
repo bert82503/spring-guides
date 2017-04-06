@@ -12,4 +12,4 @@
 
 ### 3. 服务消费者
 * [服务消费者 - 用户指南](http://dubbo.io/User+Guide-zh.htm#UserGuide-zh-服务消费者)
-* 详见 [spring-boot-rpc-soa-dubbo-consumer](https://github.com/EdwardLee03/spring-guides/spring-boot-rpc-soa-dubbo-consumer) 项目
+* 详见 [spring-boot-rpc-soa-dubbo-consumer](https://github.com/EdwardLee03/spring-guides/tree/master/spring-boot-rpc-soa-dubbo-consumer) 项目
