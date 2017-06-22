@@ -20,7 +20,7 @@
     <!-- https://start.spring.io/ -->
 
     <dependencies>
-        <!-- ================= Spring Boot ================= -->
+        <!-- ================ Spring Boot ================ -->
         <!-- Add typical dependencies for a web application -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

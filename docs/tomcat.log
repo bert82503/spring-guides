@@ -10,7 +10,7 @@
  :: Spring Boot ::        (v1.4.4.RELEASE)
 
 #[ main线程
-# GreetingApplication-应用启动入口
+# GreetingApplication-应用入口点
 2017-01-30 10:02:59.104  INFO 90368 --- [           main] spring.guides.hello.GreetingApplication  : Starting GreetingApplication on dannongdembp with PID 90368 (/Users/dannong/Documents/workspace/GitHub/spring-guides/gs-rest-service/target/classes started by dannong in /Users/dannong/Documents/workspace/GitHub/spring-guides)
 # profile-配置文件（default）
 2017-01-30 10:02:59.131  INFO 90368 --- [           main] spring.guides.hello.GreetingApplication  : No active profile set, falling back to default profiles: default
@@ -53,7 +53,7 @@
 2017-01-30 10:03:02.859  INFO 90368 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4466af20: startup date [Mon Jan 30 10:02:59 CST 2017]; root of context hierarchy
 ## RequestMappingHandlerMapping-请求映射处理程序映射
 # [/greeting]-自定义（public spring.guides.hello.Greeting spring.guides.hello.GreetingController.greeting(java.lang.String)）
-2017-01-30 10:03:02.938  INFO 90368 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/greeting],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public spring.guides.hello.Greeting spring.guides.hello.GreetingController.greeting(java.lang.String)
+2017-01-30 10:03:02.938  INFO 90368 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/greeting],methods=[GET],produces=[application/json]}" onto public spring.guides.hello.Greeting spring.guides.hello.GreetingController.greeting(java.lang.String)
 # [/error]-BasicErrorController.error(...)
 2017-01-30 10:03:02.940  INFO 90368 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
 # [/error]-BasicErrorController.errorHtml(...)
@@ -108,7 +108,7 @@
 ## DispatcherServlet-Spring框架分发器程序
 # 'dispatcherServlet'分发器框架程序（初始化开始）
 2017-01-30 10:03:11.652  INFO 90368 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
-# 'dispatcherServlet'分发器框架程序（初始化完成）
+#! 'dispatcherServlet'分发器框架程序（初始化完成）
 2017-01-30 10:03:11.666  INFO 90368 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
 
 

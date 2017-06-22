@@ -7,13 +7,13 @@
         http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
        " default-autowire="byName">
 
-    <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
+    <!-- 消费方应用名，用于计算依赖关系（不是匹配条件，不要与提供方一样） -->
     <dubbo:application name="${dubbo.application.name}"
                        owner="${dubbo.application.owner}"
                        version="${dubbo.application.version}"/>
 
     <!-- Registry: 服务注册与发现的注册中心 -->
-    <!-- 使用Zookeeper注册中心暴露服务地址 -->
+    <!-- 使用Zookeeper注册中心暴露发现服务地址 -->
     <dubbo:registry protocol="${dubbo.registry.protocol:dubbo}"
                     address="${dubbo.registry.address}"
                     client="${dubbo.registry.client:zkclient}"
@@ -25,12 +25,16 @@
 
     <!-- Consumer: 调用远程服务的服务消费方 -->
     <dubbo:consumer group="${dubbo.consumer.group}"
-                    loadbalance="${dubbo.provider.loadbalance:random}"/>
+                    loadbalance="${dubbo.provider.loadbalance:leastactive}"
+                    check="${dubbo.consumer.check:false}"/>
 
     <!-- Consumer: 调用远程服务的服务消费方 -->
-    <!-- 生成远程服务代理，可以和本地bean一样使用 -->
+    <!-- 生成远程服务代理，可以和本地服务一样使用远程服务 -->
     <dubbo:reference id="demoService"
                      interface="spring.guides.service.DemoService"
-                     timeout="1000"/>
+                     init="true"
+                     timeout="1000">
+        <dubbo:method name="sayHello" timeout="100"/>
+    </dubbo:reference>
 
 </beans>

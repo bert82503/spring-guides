@@ -23,7 +23,7 @@
     </properties>
 
     <dependencies>
-        <!-- ================= Internal Project ================= -->
+        <!-- ================ Internal Project ================ -->
         <dependency>
             <groupId>com.springframework</groupId>
             <artifactId>spring-boot-rpc-soa-dubbo-api</artifactId>
@@ -37,7 +37,7 @@
         </dependency>
 
 
-        <!-- ================= Spring Boot ================= -->
+        <!-- ================ Spring Boot ================ -->
         <!-- Add typical dependencies for a web application -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -51,7 +51,7 @@
         </dependency>
 
 
-        <!-- ================= RPC - SOA ================= -->
+        <!-- ================ RPC - SOA ================ -->
         <dependency>
             <groupId>com.wacai</groupId>
             <artifactId>spring-boot-starter-dubbo</artifactId>
@@ -81,7 +81,7 @@
         </dependency>
 
 
-        <!-- ================= Test ================= -->
+        <!-- ================ Test ================ -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

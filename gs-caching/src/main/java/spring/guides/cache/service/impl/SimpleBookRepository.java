@@ -15,7 +15,7 @@ import spring.guides.cache.service.BookRepository;
  * @author dannong
  * @since 2017年05月30日 22:35
  */
-@CacheConfig(cacheNames = "books")
+@CacheConfig(cacheNames = "book")
 @Service(value = "bookRepository")
 public class SimpleBookRepository implements BookRepository {
 

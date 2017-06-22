@@ -9,22 +9,14 @@
         <version>0.1.0</version>
     </parent>
 
-    <artifactId>gs-actuator-service</artifactId>
+    <artifactId>spring-boot-tomcat-config</artifactId>
     <packaging>jar</packaging>
 
     <name>${project.artifactId}</name>
-    <description>Building a RESTful Web Service with Spring Boot Actuator</description>
-    <url>https://spring.io/guides/gs/actuator-service/</url>
-    <!-- https://github.com/spring-guides/gs-actuator-service -->
+    <description>EMBEDDED SERVER CONFIGURATION (ServerProperties)</description>
+    <url></url>
 
     <dependencies>
-        <!-- ================ Internal Project ================ -->
-        <dependency>
-            <groupId>com.springframework</groupId>
-            <artifactId>gs-commons</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
         <!-- ================ Spring Boot ================ -->
         <!-- Add typical dependencies for a web application -->
         <dependency>
@@ -47,12 +39,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>6.9.10</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

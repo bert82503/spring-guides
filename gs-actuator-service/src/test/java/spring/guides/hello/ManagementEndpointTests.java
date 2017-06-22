@@ -23,7 +23,7 @@ public class ManagementEndpointTests extends AbstractIntegrationTests {
      */
     @Test
     public void health() {
-        String url = toEndpointUrl("/health");
+        String url = toEndpointUrl("/health.json");
         ResponseEntity<Map> entity = this.testRestTemplate.getForEntity(
                 url, Map.class); // LinkedHashMap
 
@@ -38,7 +38,7 @@ public class ManagementEndpointTests extends AbstractIntegrationTests {
      */
     @Test
     public void info() {
-        String url = toEndpointUrl("/info");
+        String url = toEndpointUrl("/info.json");
         ResponseEntity<Map> entity = this.testRestTemplate.getForEntity(
                 url, Map.class); // LinkedHashMap
 

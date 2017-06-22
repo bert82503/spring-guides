@@ -3,12 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- ================= 父POM继承 ================= -->
+    <!-- ================ 父POM继承 ================ -->
     <!-- Inherit defaults from Spring Boot -->
+    <!-- http://projects.spring.io/spring-boot/ -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.4.4.RELEASE</version>
+        <version>1.5.4.RELEASE</version>
     </parent>
 
 	<groupId>com.springframework</groupId>
@@ -21,49 +22,52 @@
     <url>https://spring.io/guides/</url>
     <!-- https://github.com/spring-guides -->
 
-    <!-- ================= 多模块项目管理 ================= -->
+    <!-- ================ 多模块项目管理 ================ -->
     <modules>
+        <module>gs-commons</module>
         <module>spring-boot-quick-start</module>
         <module>gs-spring-boot</module>
         <module>gs-actuator-service</module>
         <module>gs-rest-service</module>
         <module>spring-boot-actuator-jmx</module>
+        <module>spring-boot-tomcat-config</module>
         <module>gs-testing-web</module>
         <module>spring-boot-getting-started</module>
-        <module>gs-commons</module>
         <module>spring-boot-hot-swapping</module>
         <!-- Dubbo -->
         <module>spring-boot-rpc-soa-dubbo-provider</module>
         <module>spring-boot-rpc-soa-dubbo-consumer</module>
         <module>spring-boot-rpc-soa-dubbo-api</module>
+        <module>spring-boot-latest-stable-version</module>
+        <module>gs-caching</module>
     </modules>
 
-    <!-- ================= 源代码管理 ================= -->
+    <!-- ================ 源代码管理 ================ -->
     <scm>
     </scm>
 
-    <!-- ================= 发布管理 ================= -->
+    <!-- ================ 发布管理 ================ -->
     <distributionManagement>
     </distributionManagement>
 
-    <!-- ================= 属性配置 ================= -->
+    <!-- ================ 属性配置 ================ -->
 	<properties>
         <!-- Changing the Java version -->
 		<java.version>1.8</java.version>
 	</properties>
 
-    <!-- ================= 依赖管理(版本一致性) ================= -->
+    <!-- ================ 依赖管理(版本一致性) ================ -->
     <dependencyManagement>
     </dependencyManagement>
 
-    <!-- ================= 所有项目的公共依赖 ================= -->
+    <!-- ================ 所有项目的公共依赖 ================ -->
     <dependencies>
-        <!-- ================= Test ================= -->
+        <!-- ================ Test ================ -->
     </dependencies>
 
-    <!-- ================= 构建配置 ================= -->
+    <!-- ================ 构建配置 ================ -->
 	<build>
-        <!-- ================= 插件管理 ================= -->
+        <!-- ================ 插件管理 ================ -->
         <pluginManagement>
             <plugins>
                 <!-- 指定编译文件的版本和编码 -->
@@ -90,13 +94,13 @@
             </plugins>
         </pluginManagement>
 
-        <!-- ================= 所有项目的插件依赖 ================= -->
+        <!-- ================ 所有项目的插件依赖 ================ -->
         <plugins>
             <plugin>
                 <artifactId>maven-source-plugin</artifactId>
             </plugin>
 
-            <!-- ================= 自动添加 ================= -->
+            <!-- ================ 自动添加 ================ -->
             <!--<plugin>-->
                 <!--<artifactId>maven-compiler-plugin</artifactId>-->
             <!--</plugin>-->

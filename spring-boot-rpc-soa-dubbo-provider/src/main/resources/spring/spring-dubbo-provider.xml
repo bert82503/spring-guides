@@ -8,31 +8,46 @@
        " default-autowire="byName">
 
     <!-- 提供方应用信息，用于计算依赖关系 -->
-    <dubbo:application name="${dubbo.application.name}"
-                       owner="${dubbo.application.owner}"
-                       version="${dubbo.application.version}"/>
+    <dubbo:application
+            name="${dubbo.application.name}"
+            owner="${dubbo.application.owner}"
+            version="${dubbo.application.version}"/>
 
     <!-- Registry: 服务注册与发现的注册中心 -->
     <!-- 使用Zookeeper注册中心暴露服务地址 -->
-    <dubbo:registry protocol="${dubbo.registry.protocol:dubbo}"
-                    address="${dubbo.registry.address}"
-                    client="${dubbo.registry.client:zkclient}"
-                    group="${dubbo.registry.group}"/>
+    <dubbo:registry
+            id="creditCardRegistry"
+            address="${dubbo.registry.address}"
+            protocol="${dubbo.registry.protocol:dubbo}"
+            client="${dubbo.registry.client:zkclient}"
+            group="${dubbo.registry.group}"/>
 
     <!-- 用dubbo协议在20880端口暴露服务 -->
-    <dubbo:protocol name="${dubbo.protocol.name:dubbo}"
-                    port="${dubbo.protocol.port:20880}"/>
+    <dubbo:protocol
+            name="${dubbo.protocol.name:dubbo}"
+            port="${dubbo.protocol.port:20880}"
+            threadpool="${dubbo.protocol.threadpool:fixed}"
+            threads="${dubbo.protocol.threads:100}"/>
 
-    <!--<dubbo:consumer check="false"/>-->
 
+    <!-- 服务消费者 -->
+    <!-- Consumer: 调用远程服务的服务消费方 -->
+    <dubbo:consumer
+            check="${dubbo.consumer.check:false}"/>
+
+
+    <!-- 服务提供者 -->
     <!-- Provider: 暴露服务的服务提供方 -->
-    <dubbo:provider group="${dubbo.provider.group}"
-                    loadbalance="${dubbo.provider.loadbalance:random}"/>
+    <dubbo:provider
+            group="${dubbo.provider.group}"
+            loadbalance="${dubbo.provider.loadbalance:random}"
+            threadpool="${dubbo.provider.threadpool:fixed}"
+            threads="${dubbo.provider.threads:100}"/>
 
 
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="spring.guides.service.DemoService"
-                   ref="demoService"
-                   timeout="1000" retries="0" connections="100"/>
+    <dubbo:service
+            interface="spring.guides.service.DemoService" ref="demoService"
+            timeout="1000" retries="0" connections="100"/>
 
 </beans>

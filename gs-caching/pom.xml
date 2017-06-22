@@ -25,6 +25,17 @@
             <artifactId>spring-boot-starter-web</artifactId>
             <!-- Support for full-stack web development, including Tomcat and spring-webmvc. -->
         </dependency>
+        <!-- Caching -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+
+        <!-- Caffeine - Caching -->
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

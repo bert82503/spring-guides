@@ -22,26 +22,37 @@
     </properties>
 
     <dependencies>
-        <!-- ================= Internal Project ================= -->
+        <!-- ================ Internal Project ================ -->
         <dependency>
             <groupId>com.springframework</groupId>
             <artifactId>spring-boot-rpc-soa-dubbo-api</artifactId>
             <version>${project.version}</version>
         </dependency>
 
-        <!-- ================= Spring Boot ================= -->
+        <!-- ================ Spring Boot ================ -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
             <!-- Production ready features to help you monitor and manage your application. -->
         </dependency>
-
-        <!-- ================= RPC - SOA ================= -->
+        <!-- Add typical dependencies for a web application -->
         <dependency>
-            <groupId>com.wacai</groupId>
-            <artifactId>spring-boot-starter-dubbo</artifactId>
-            <version>1.0.2</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <!-- Support for full-stack web development, including Tomcat and spring-webmvc. -->
         </dependency>
+        <!-- Using Jolokia for JMX over HTTP -->
+        <dependency>
+            <groupId>org.jolokia</groupId>
+            <artifactId>jolokia-core</artifactId>
+        </dependency>
+
+        <!-- ================ RPC - SOA ================ -->
+        <!--<dependency>-->
+            <!--<groupId>com.wacai</groupId>-->
+            <!--<artifactId>spring-boot-starter-dubbo</artifactId>-->
+            <!--<version>1.0.2</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo</artifactId>
