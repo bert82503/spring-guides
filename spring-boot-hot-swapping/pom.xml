@@ -9,13 +9,12 @@
         <version>0.1.0</version>
     </parent>
 
-    <artifactId>gs-caching</artifactId>
+    <artifactId>spring-boot-hot-swapping</artifactId>
     <packaging>jar</packaging>
 
     <name>${project.artifactId}</name>
-    <description>Caching Data with Spring</description>
-    <url>https://spring.io/guides/gs/caching/</url>
-    <!-- https://github.com/spring-guides/gs-caching -->
+    <description>Hot swapping</description>
+    <url>https://docs.spring.io/spring-boot/docs/current/reference/html/howto-hotswapping.html</url>
 
     <dependencies>
         <!-- ================ Spring Boot ================ -->
@@ -26,24 +25,29 @@
             <!-- Support for full-stack web development, including Tomcat and spring-webmvc. -->
         </dependency>
 
-        <!-- Caching -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-cache</artifactId>
-        </dependency>
-        <!-- Caffeine -->
-        <dependency>
-            <groupId>com.github.ben-manes.caffeine</groupId>
-            <artifactId>caffeine</artifactId>
-        </dependency>
+        <!-- Developer tools -->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-devtools</artifactId>-->
+            <!--<optional>true</optional>-->
+        <!--</dependency>-->
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Package as an executable jar -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <dependencies>
+                    <!-- Hot swapping -->
+                    <!-- Spring Loaded -->
+                    <dependency>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>springloaded</artifactId>
+                        <version>${spring-loaded.version}</version>
+                        <!-- Reload Java classes without restarting the container -->
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
