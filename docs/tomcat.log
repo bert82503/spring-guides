@@ -1,124 +1,65 @@
 
-## 启动阶段
-# Banner-横幅
+
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
 ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
   '  |____| .__|_| |_|_| |_\__, | / / / /
  =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::        (v1.4.4.RELEASE)
+ :: Spring Boot ::        (v1.5.4.RELEASE)
 
-#[ main线程
-# GreetingApplication-应用入口点
-2017-01-30 10:02:59.104  INFO 90368 --- [           main] spring.guides.hello.GreetingApplication  : Starting GreetingApplication on dannongdembp with PID 90368 (/Users/dannong/Documents/workspace/GitHub/spring-guides/gs-rest-service/target/classes started by dannong in /Users/dannong/Documents/workspace/GitHub/spring-guides)
-# profile-配置文件（default）
-2017-01-30 10:02:59.131  INFO 90368 --- [           main] spring.guides.hello.GreetingApplication  : No active profile set, falling back to default profiles: default
-#~ AnnotationConfigEmbeddedWebApplicationContext-刷新"注解配置嵌入式Web应用上下文"（root of context hierarchy-上下文层次结构树的根）
-2017-01-30 10:02:59.232  INFO 90368 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4466af20: startup date [Mon Jan 30 10:02:59 CST 2017]; root of context hierarchy
-2017-01-30 10:03:00.277  INFO 90368 --- [           main] o.s.core.annotation.AnnotationUtils      : Failed to introspect annotations on [class org.springframework.boot.actuate.autoconfigure.EndpointWebMvcHypermediaManagementContextConfiguration]: java.lang.ArrayStoreException: sun.reflect.annotation.TypeNotPresentExceptionProxy
-2017-01-30 10:03:00.277  INFO 90368 --- [           main] o.s.core.annotation.AnnotationUtils      : Failed to introspect annotations on [class org.springframework.boot.actuate.autoconfigure.EndpointWebMvcHypermediaManagementContextConfiguration]: java.lang.ArrayStoreException: sun.reflect.annotation.TypeNotPresentExceptionProxy
-## Tomcat
-# TomcatEmbeddedServletContainer-Tomcat嵌入式Servlet容器（8080端口、http协议）
-2017-01-30 10:03:01.721  INFO 90368 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
-# StandardService-Tomcat服务（启动Tomcat服务）
-2017-01-30 10:03:01.750  INFO 90368 --- [           main] o.apache.catalina.core.StandardService   : Starting service Tomcat
-# StandardEngine-Tomcat引擎（启动Tomcat/8.5.11引擎）
-2017-01-30 10:03:01.753  INFO 90368 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11
-## Spring（ost-startStop-1线程）
-# [Tomcat].[localhost].[/]-初始化嵌入式Web应用上下文（并未真正初始化）
-2017-01-30 10:03:01.925  INFO 90368 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-#! ContextLoader-上下文加载器（Root WebApplicationContext-Web应用上下文的根初始化完成）
-2017-01-30 10:03:01.925  INFO 90368 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2697 ms
-## Servlet（ServletRegistrationBean-服务器端程序注册中心）
-# 'dispatcherServlet'-分发器程序（[/]）
-2017-01-30 10:03:02.356  INFO 90368 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
-## Filter（FilterRegistrationBean-过滤器/调用拦截注册中心）
-# metricsFilter-指标统计过滤器（[/*]）
-2017-01-30 10:03:02.362  INFO 90368 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'metricsFilter' to: [/*]
-# characterEncodingFilter-字符编码过滤器（[/*]）
-2017-01-30 10:03:02.363  INFO 90368 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
-# hiddenHttpMethodFilter-隐藏HTTP方法过滤器（[/*]）
-2017-01-30 10:03:02.363  INFO 90368 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-# httpPutFormContentFilter-HTTP输入表单内容过滤器（[/*]）
-2017-01-30 10:03:02.363  INFO 90368 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
-# requestContextFilter-请求上下文过滤器（[/*]）
-2017-01-30 10:03:02.363  INFO 90368 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
-# webRequestLoggingFilter-Web请求记录过滤器（[/*]）
-2017-01-30 10:03:02.364  INFO 90368 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webRequestLoggingFilter' to: [/*]
-# applicationContextIdFilter-应用上下文标识过滤器（[/*]）
-2017-01-30 10:03:02.364  INFO 90368 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'applicationContextIdFilter' to: [/*]
-## Advice-AOP通知（main线程）
-# RequestMappingHandlerAdapter-请求映射处理程序适配器（寻找@ControllerAdvice）
-2017-01-30 10:03:02.859  INFO 90368 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4466af20: startup date [Mon Jan 30 10:02:59 CST 2017]; root of context hierarchy
-## RequestMappingHandlerMapping-请求映射处理程序映射
-# [/greeting]-自定义（public spring.guides.hello.Greeting spring.guides.hello.GreetingController.greeting(java.lang.String)）
-2017-01-30 10:03:02.938  INFO 90368 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/greeting],methods=[GET],produces=[application/json]}" onto public spring.guides.hello.Greeting spring.guides.hello.GreetingController.greeting(java.lang.String)
-# [/error]-BasicErrorController.error(...)
-2017-01-30 10:03:02.940  INFO 90368 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-# [/error]-BasicErrorController.errorHtml(...)
-2017-01-30 10:03:02.941  INFO 90368 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-## SimpleUrlHandlerMapping-简单URL处理程序映射（ResourceHttpRequestHandler-资源HTTP请求处理程序）
-# [/webjars/**]
-2017-01-30 10:03:02.977  INFO 90368 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-# [/**]
-2017-01-30 10:03:02.978  INFO 90368 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-# [/**/favicon.ico]
-2017-01-30 10:03:03.026  INFO 90368 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-## EndpointHandlerMapping-端点处理程序映射
-# [/mappings || /mappings.json]-"请求路径-执行方法"映射列表（EndpointMvcAdapter-端点MVC适配器）
-2017-01-30 10:03:03.427  INFO 90368 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/mappings || /mappings.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
-# [/beans || /beans.json]-容器管理的组件列表（EndpointMvcAdapter）
-2017-01-30 10:03:03.429  INFO 90368 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/beans || /beans.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
-# [/heapdump || /heapdump.json]-堆内存转储（HeapdumpMvcEndpoint）
-2017-01-30 10:03:03.430  INFO 90368 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}" onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException
-# [/trace || /trace.json]-请求历史跟踪（EndpointMvcAdapter）
-2017-01-30 10:03:03.431  INFO 90368 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/trace || /trace.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
-# [/health || /health.json]-应用健康状况（HealthMvcEndpoint）
-2017-01-30 10:03:03.432  INFO 90368 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/health || /health.json],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(java.security.Principal)
-# [/dump || /dump.json]-线程转储（EndpointMvcAdapter）
-2017-01-30 10:03:03.433  INFO 90368 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/dump || /dump.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
-# [/env/{name:.*}]-应用环境配置（EnvironmentMvcEndpoint）
-2017-01-30 10:03:03.435  INFO 90368 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env/{name:.*}],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
-# [/env || /env.json]-应用环境配置列表（EndpointMvcAdapter）
-2017-01-30 10:03:03.435  INFO 90368 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env || /env.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
-# [/info || /info.json]-应用信息（EndpointMvcAdapter）
-2017-01-30 10:03:03.438  INFO 90368 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/info || /info.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
-# [/configprops || /configprops.json]-应用配置属性列表（EndpointMvcAdapter）
-2017-01-30 10:03:03.439  INFO 90368 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
-# [/metrics/{name:.*}]-应用性能指标（MetricsMvcEndpoint）
-2017-01-30 10:03:03.443  INFO 90368 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics/{name:.*}],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
-# [/metrics || /metrics.json]-应用性能指标列表（EndpointMvcAdapter）
-2017-01-30 10:03:03.443  INFO 90368 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics || /metrics.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
-# [/autoconfig || /autoconfig.json]-自动配置列表（EndpointMvcAdapter）
-2017-01-30 10:03:03.444  INFO 90368 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
-## JMX-Java管理扩展（Java Management Extensions）
-# AnnotationMBeanExporter-注解JMX组件输出者（在启动时注册JMX暴露的组件）
-2017-01-30 10:03:03.568  INFO 90368 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
-#~ DefaultLifecycleProcessor-默认的生命周期处理器（在阶段0中启动组件）
-2017-01-30 10:03:03.577  INFO 90368 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
-#! TomcatEmbeddedServletContainer（Tomcat启动完成）
-2017-01-30 10:03:03.829  INFO 90368 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
-#! GreetingApplication（应用启动完成）
-2017-01-30 10:03:03.840  INFO 90368 --- [           main] spring.guides.hello.GreetingApplication  : Started GreetingApplication in 6.006 seconds (JVM running for 6.737)
+2017-07-09 22:16:34.026  INFO 26314 --- [           main] spring.guides.hello.GreetingApplication  : Starting GreetingApplication on 192.168.1.3 with PID 26314 (/Users/dannong/Documents/workspace/GitHub/spring-guides/gs-rest-service/target/classes started by dannong in /Users/dannong/Documents/workspace/GitHub/spring-guides)
+2017-07-09 22:16:34.040  INFO 26314 --- [           main] spring.guides.hello.GreetingApplication  : No active profile set, falling back to default profiles: default
+2017-07-09 22:16:34.200  INFO 26314 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5e25a92e: startup date [Sun Jul 09 22:16:34 CST 2017]; root of context hierarchy
+2017-07-09 22:16:36.776  INFO 26314 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-07-09 22:16:36.796  INFO 26314 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-07-09 22:16:36.797  INFO 26314 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.15
+2017-07-09 22:16:36.928  INFO 26314 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-07-09 22:16:36.928  INFO 26314 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2737 ms
+2017-07-09 22:16:37.188  INFO 26314 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-07-09 22:16:37.195  INFO 26314 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'metricsFilter' to: [/*]
+2017-07-09 22:16:37.195  INFO 26314 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-07-09 22:16:37.195  INFO 26314 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-07-09 22:16:37.196  INFO 26314 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-07-09 22:16:37.196  INFO 26314 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-07-09 22:16:37.196  INFO 26314 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2017-07-09 22:16:37.196  INFO 26314 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'applicationContextIdFilter' to: [/*]
+2017-07-09 22:16:37.673  INFO 26314 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5e25a92e: startup date [Sun Jul 09 22:16:34 CST 2017]; root of context hierarchy
+2017-07-09 22:16:37.763  INFO 26314 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/greeting],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public spring.guides.hello.Greeting spring.guides.hello.GreetingController.greeting(java.lang.String)
+2017-07-09 22:16:37.772  INFO 26314 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-07-09 22:16:37.773  INFO 26314 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-07-09 22:16:37.834  INFO 26314 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-07-09 22:16:37.834  INFO 26314 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-07-09 22:16:37.879  INFO 26314 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-07-09 22:16:38.300  INFO 26314 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2017-07-09 22:16:38.300  INFO 26314 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env || /env.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-07-09 22:16:38.301  INFO 26314 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/info || /info.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-07-09 22:16:38.302  INFO 26314 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/mappings || /mappings.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-07-09 22:16:38.303  INFO 26314 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/auditevents || /auditevents.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public org.springframework.http.ResponseEntity<?> org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint.findByPrincipalAndAfterAndType(java.lang.String,java.util.Date,java.lang.String)
+2017-07-09 22:16:38.305  INFO 26314 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-07-09 22:16:38.305  INFO 26314 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-07-09 22:16:38.309  INFO 26314 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/loggers/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.get(java.lang.String)
+2017-07-09 22:16:38.310  INFO 26314 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/loggers/{name:.*}],methods=[POST],consumes=[application/vnd.spring-boot.actuator.v1+json || application/json],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.set(java.lang.String,java.util.Map<java.lang.String, java.lang.String>)
+2017-07-09 22:16:38.310  INFO 26314 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/loggers || /loggers.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-07-09 22:16:38.312  INFO 26314 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/dump || /dump.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-07-09 22:16:38.313  INFO 26314 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}" onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException
+2017-07-09 22:16:38.314  INFO 26314 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/trace || /trace.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-07-09 22:16:38.315  INFO 26314 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2017-07-09 22:16:38.316  INFO 26314 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics || /metrics.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-07-09 22:16:38.317  INFO 26314 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/health || /health.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,java.security.Principal)
+2017-07-09 22:16:38.317  INFO 26314 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/beans || /beans.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-07-09 22:16:38.441  INFO 26314 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-07-09 22:16:38.452  INFO 26314 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2017-07-09 22:16:38.688  INFO 26314 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-07-09 22:16:38.694  INFO 26314 --- [           main] spring.guides.hello.GreetingApplication  : Started GreetingApplication in 5.483 seconds (JVM running for 6.291)
 
-#[ nio-8080-exec-1线程
-#! [Tomcat].[localhost].[/]（开始初始化Spring 'dispatcherServlet'分发器框架程序-延迟加载/延迟实例化）
-2017-01-30 10:03:11.652  INFO 90368 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-## DispatcherServlet-Spring框架分发器程序
-# 'dispatcherServlet'分发器框架程序（初始化开始）
-2017-01-30 10:03:11.652  INFO 90368 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
-#! 'dispatcherServlet'分发器框架程序（初始化完成）
-2017-01-30 10:03:11.666  INFO 90368 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
+2017-07-09 22:17:03.104  INFO 26314 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-07-09 22:17:03.105  INFO 26314 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-07-09 22:17:03.126  INFO 26314 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 21 ms
 
+2017-07-09 22:17:53.994  INFO 26314 --- [       Thread-3] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5e25a92e: startup date [Sun Jul 09 22:16:34 CST 2017]; root of context hierarchy
+2017-07-09 22:17:53.996  INFO 26314 --- [       Thread-3] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2017-07-09 22:17:54.001  INFO 26314 --- [       Thread-3] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
 
-## 关闭阶段（Thread-2线程）
-#~ AnnotationConfigEmbeddedWebApplicationContext-关闭"注解配置嵌入式Web应用上下文"（root of context hierarchy-上下文层次结构树的根）
-2017-01-30 10:09:48.285  INFO 90368 --- [       Thread-2] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4466af20: startup date [Mon Jan 30 10:02:59 CST 2017]; root of context hierarchy
-#~ DefaultLifecycleProcessor-默认的生命周期处理器（停止阶段0中的组件）
-2017-01-30 10:09:48.288  INFO 90368 --- [       Thread-2] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
-#~ AnnotationMBeanExporter-注解JMX组件输出者（在关闭时取消注册JMX暴露的组件）
-2017-01-30 10:09:48.290  INFO 90368 --- [       Thread-2] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
-
-# 进程结束（退出代码-130）
 Process finished with exit code 130
+
