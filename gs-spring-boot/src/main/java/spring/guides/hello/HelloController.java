@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class HelloController {
 
-    @RequestMapping("/")
-    public String index() {
-        return "Greetings from Spring Boot!";
-    }
+  @RequestMapping(path = "/")
+  public String index() {
+    return "Greetings from Spring Boot!";
+  }
 
 }

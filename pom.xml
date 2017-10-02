@@ -1,113 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-    <!-- ================ 父POM继承 ================ -->
-    <!-- Inherit defaults from Spring Boot -->
-    <!-- http://projects.spring.io/spring-boot/ -->
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.4.RELEASE</version>
-    </parent>
+  <!-- ================ 父POM继承 ================ -->
+  <!-- Inherit defaults from Spring Boot -->
+  <!-- http://projects.spring.io/spring-boot/ -->
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.5.7.RELEASE</version>
+  </parent>
 
-	<groupId>com.springframework</groupId>
-	<artifactId>spring-guides</artifactId>
-	<version>0.1.0</version>
-	<packaging>pom</packaging>
+  <groupId>com.springframework</groupId>
+  <artifactId>spring-guides</artifactId>
+  <version>0.1.0</version>
+  <packaging>pom</packaging>
 
-	<name>Spring Guides</name>
-	<description>task-focused Getting Started Guides and Tutorials</description>
-    <url>https://spring.io/guides/</url>
-    <!-- https://github.com/spring-guides -->
+  <name>Spring Guides</name>
+  <description>task-focused Getting Started Guides and Tutorials</description>
+  <url>https://spring.io/guides</url>
+  <!-- https://github.com/spring-guides -->
 
-    <!-- ================ 多模块项目管理 ================ -->
-    <modules>
-        <module>gs-commons</module>
-        <module>spring-boot-quick-start</module>
-        <module>gs-spring-boot</module>
-        <module>gs-actuator-service</module>
-        <module>gs-rest-service</module>
-        <module>spring-boot-actuator-jmx</module>
-        <module>spring-boot-tomcat-config</module>
-        <module>gs-testing-web</module>
-        <module>spring-boot-getting-started</module>
-        <module>spring-boot-hot-swapping</module>
-        <!-- Dubbo -->
-        <module>spring-boot-rpc-soa-dubbo-provider</module>
-        <module>spring-boot-rpc-soa-dubbo-consumer</module>
-        <module>spring-boot-rpc-soa-dubbo-api</module>
-        <module>spring-boot-latest-stable-version</module>
-        <module>gs-caching</module>
-    </modules>
+  <!-- ================ 多模块项目管理 ================ -->
+  <modules>
+    <module>gs-commons</module>
+    <module>spring-boot-quick-start</module>
+    <module>gs-spring-boot</module>
+    <module>gs-actuator-service</module>
+    <module>gs-rest-service</module>
+    <module>spring-boot-actuator-jmx</module>
+    <module>spring-boot-tomcat-config</module>
+    <module>gs-testing-web</module>
+    <module>spring-boot-getting-started</module>
+    <module>spring-boot-hot-swapping</module>
+    <!-- RPC -->
+    <module>spring-boot-rpc-soa-api</module>
+    <!-- Dubbo -->
+    <module>spring-boot-rpc-soa-dubbo-provider</module>
+    <module>spring-boot-rpc-soa-dubbo-consumer</module>
+    <module>spring-boot-latest-stable-version</module>
+    <module>gs-caching</module>
+    <module>spring-boot-http</module>
+  </modules>
 
-    <!-- ================ 源代码管理 ================ -->
-    <scm>
-    </scm>
+  <!-- ================ 源代码管理 ================ -->
+  <scm>
+  </scm>
 
-    <!-- ================ 发布管理 ================ -->
-    <distributionManagement>
-    </distributionManagement>
+  <!-- ================ 发布管理 ================ -->
+  <distributionManagement>
+  </distributionManagement>
 
-    <!-- ================ 属性配置 ================ -->
-	<properties>
-        <!-- Changing the Java version -->
-		<java.version>1.8</java.version>
-	</properties>
+  <!-- ================ 属性配置 ================ -->
+  <properties>
+    <testng.version>6.9.10</testng.version>
 
-    <!-- ================ 依赖管理(版本一致性) ================ -->
-    <dependencyManagement>
-    </dependencyManagement>
+    <!-- Changing the Java version -->
+    <java.version>1.8</java.version>
+    <skip.maven.deploy>false</skip.maven.deploy>
+  </properties>
 
-    <!-- ================ 所有项目的公共依赖 ================ -->
+  <!-- ================ 依赖管理(版本一致性) ================ -->
+  <dependencyManagement>
     <dependencies>
-        <!-- ================ Test ================ -->
+      <!-- ================ 一方库 ================ -->
+      <dependency>
+        <groupId>com.springframework</groupId>
+        <artifactId>gs-commons</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+
+      <!-- ================ 二方库 ================ -->
+
+
+      <!-- ================ 三方库 ================ -->
+      <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>${testng.version}</version>
+        <scope>test</scope>
+      </dependency>
     </dependencies>
+  </dependencyManagement>
 
-    <!-- ================ 构建配置 ================ -->
-	<build>
-        <!-- ================ 插件管理 ================ -->
-        <pluginManagement>
-            <plugins>
-                <!-- 指定编译文件的版本和编码 -->
-                <plugin>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <configuration>
-                        <source>${maven.compiler.source}</source>
-                        <target>${maven.compiler.target}</target>
-                        <encoding>${project.build.sourceEncoding}</encoding>
-                    </configuration>
-                </plugin>
-                <!-- 打包同时生成源码 -->
-                <plugin>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <executions>
-                        <execution>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>jar-no-fork</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+  <!-- ================ 所有项目的公共依赖 ================ -->
+  <dependencies>
+    <!-- ================ Test ================ -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+    </dependency>
+  </dependencies>
 
-        <!-- ================ 所有项目的插件依赖 ================ -->
-        <plugins>
-            <plugin>
-                <artifactId>maven-source-plugin</artifactId>
-            </plugin>
+  <!-- ================ 构建配置 ================ -->
+  <build>
+    <finalName>${project.artifactId}-${project.version}</finalName>
 
-            <!-- ================ 自动添加 ================ -->
-            <!--<plugin>-->
-                <!--<artifactId>maven-compiler-plugin</artifactId>-->
-            <!--</plugin>-->
-            <!-- Test -->
-            <!--<plugin>-->
-                <!--<artifactId>maven-surefire-plugin</artifactId>-->
-            <!--</plugin>-->
-        </plugins>
-	</build>
+    <!-- ================ 插件管理 ================ -->
+    <pluginManagement>
+      <plugins>
+        <!-- 编译源代码 -->
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <fork>true</fork>
+            <source>${maven.compiler.source}</source>
+            <target>${maven.compiler.target}</target>
+            <encoding>${project.build.sourceEncoding}</encoding>
+          </configuration>
+        </plugin>
+        <!-- 执行单元测试 -->
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <configuration>
+            <useSystemClassLoader>true</useSystemClassLoader>
+            <forkMode>once</forkMode>
+          </configuration>
+        </plugin>
+        <!-- 执行集成测试 -->
+        <plugin>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <executions>
+            <execution>
+              <goals>
+                <goal>integration-test</goal>
+                <goal>verify</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <!-- 源码打包 -->
+        <plugin>
+          <artifactId>maven-source-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>attach-sources</id>
+              <goals>
+                <goal>jar</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <!-- 打成JAR包 -->
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <configuration>
+            <archive>
+              <addMavenDescriptor>true</addMavenDescriptor>
+              <index>true</index>
+              <manifest>
+                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+              </manifest>
+            </archive>
+          </configuration>
+        </plugin>
+        <!-- 发布JAR包 -->
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <configuration>
+            <skip>${skip.maven.deploy}</skip>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+    <!-- ================ 所有项目的插件列表 ================ -->
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-failsafe-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-source-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+      </plugin>
+
+      <!-- Package as an executable jar -->
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 </project>

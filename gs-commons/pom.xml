@@ -12,7 +12,7 @@
     <artifactId>gs-commons</artifactId>
     <packaging>jar</packaging>
 
-    <name>${project.artifactId}</name>
+    <name>Common Components with Spring Boot</name>
     <description>Building basic common components with Spring Boot</description>
 
     <dependencies>
@@ -36,7 +36,6 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.9.10</version>
             <scope>provided</scope>
             <optional>true</optional>
         </dependency>
