@@ -13,15 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController("sampleController") // = @Controller + @ResponseBody
 @SpringBootApplication // = @SpringBootConfiguration/@Configuration + @EnableAutoConfiguration + @ComponentScan
+@SuppressWarnings("enter-point")
 public class SampleController {
 
-    @RequestMapping("/")
-    public String home() {
-        return "Hello World!";
-    }
+  @RequestMapping(path = "/")
+  public String home() {
+    return "Hello World!";
+  }
 
-    public static void main(String[] args) {
-        SpringApplication.run(SampleController.class, args);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(SampleController.class, args);
+  }
 
 }
