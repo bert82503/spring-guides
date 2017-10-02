@@ -1,0 +1,382 @@
+
+
+# Spring Boot 提供的组件
+2017-10-03 00:05:05.901  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : Let's inspect the beans provided by Spring Boot:
+# ======= 内部处理程序 =======
+# 内部的配置(@Configuration)注解处理程序(internalConfigurationAnnotationProcessor)
+2017-10-03 00:05:05.901  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.context.annotation.internalConfigurationAnnotationProcessor
+# 内部的自动注入(@Autowired)注解处理程序(internalAutowiredAnnotationProcessor)
+2017-10-03 00:05:05.901  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.context.annotation.internalAutowiredAnnotationProcessor
+# 内部的@Required注解处理程序
+2017-10-03 00:05:05.901  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.context.annotation.internalRequiredAnnotationProcessor
+# 内部的公共注解处理程序
+2017-10-03 00:05:05.901  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.context.annotation.internalCommonAnnotationProcessor
+# 内部的事件监听器处理程序(internalEventListenerProcessor)
+2017-10-03 00:05:05.901  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.context.event.internalEventListenerProcessor
+# 内部的事件监听器工厂(internalEventListenerFactory)
+2017-10-03 00:05:05.901  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.context.event.internalEventListenerFactory
+# ======= 本应用 =======
+## 本应用启动入口
+2017-10-03 00:05:05.901  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : helloApplication
+# 内部缓存的元数据读取程序工厂
+2017-10-03 00:05:05.901  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory
+# 本应用定义的控制器
+2017-10-03 00:05:05.901  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : helloController
+# 本应用自定义的命令行运行程序(commandLineRunner)
+2017-10-03 00:05:05.901  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : commandLineRunner
+# 自动配置扫描包路径集合(AutoConfigurationPackages)
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.AutoConfigurationPackages
+# 属性占位符自动配置(PropertyPlaceholderAutoConfiguration)
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration
+# 组件类型注册表(BeanTypeRegistry)
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.condition.BeanTypeRegistry
+# 属性源文件占位符替换配置程序(propertySourcesPlaceholderConfigurer)
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : propertySourcesPlaceholderConfigurer
+# ======= Jackson配置 =======
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : standardJacksonObjectMapperBuilderCustomizer
+# Jackson属性(JacksonProperties)
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties
+# 配置属性绑定后置处理程序
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor.store
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : jacksonObjectMapperBuilder
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration
+# Jackson对象映射
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : jacksonObjectMapper
+# Jackson自动配置(JacksonAutoConfiguration)
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : jsonComponentModule
+# Tomcat套接字配置
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.websocket.WebSocketAutoConfiguration$TomcatWebSocketConfiguration
+# Web套接字容器自定义
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : websocketContainerCustomizer
+# Web套接字自动配置
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.websocket.WebSocketAutoConfiguration
+# ======= 嵌入的Servlet容器配置 =======
+# 嵌入的Tomcat实例
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration$EmbeddedTomcat
+# 基于Tomcat实现的嵌入的Servlet容器工厂(tomcatEmbeddedServletContainerFactory)
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : tomcatEmbeddedServletContainerFactory
+# 嵌入的Servlet容器自动配置(EmbeddedServletContainerAutoConfiguration)
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration
+# 嵌入的Servlet容器自定义组件后置处理器(embeddedServletContainerCustomizerBeanPostProcessor)
+2017-10-03 00:05:05.902  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : embeddedServletContainerCustomizerBeanPostProcessor
+# 错误页面注册组件的后置处理程序
+2017-10-03 00:05:05.902  INFO 48065 ---  [2m[           main] spring.guides.hello.HelloApplication     : errorPageRegistrarBeanPostProcessor
+# ======= 请求分发程序 =======
+# 请求分发程序配置(DispatcherServletConfiguration)
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletConfiguration
+# 请求分发程序(dispatcherServlet)
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : dispatcherServlet
+# Web MVC属性(WebMvcProperties)
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : spring.mvc-org.springframework.boot.autoconfigure.web.WebMvcProperties
+# 请求分发程序注册组件配置(DispatcherServletRegistrationConfiguration)
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration
+# 请求分发程序注册组件(dispatcherServletRegistration)
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : dispatcherServletRegistration
+# 请求分发程序自动配置(DispatcherServletAutoConfiguration)
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration
+# 校验程序自动配置
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration
+# 默认的校验程序(defaultValidator)
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : defaultValidator
+# 方法参数校验程序后置处理程序
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : methodValidationPostProcessor
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration
+# ======= /error 异常错误响应 =======
+# 错误响应组件
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : error
+# 组件名称视图解析器(beanNameViewResolver)
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : beanNameViewResolver
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration
+# 基于约定的错误视图解析器
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : conventionErrorViewResolver
+# 错误请求自动配置
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration
+# 错误属性
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : errorAttributes
+# 基本的错误控制器
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : basicErrorController
+# 错误页面自定义
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : errorPageCustomizer
+# 保留错误请求控制器的目标类型的后置处理程序
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : preserveErrorControllerTargetClassPostProcessor
+# ======= MVC =======
+# 资源文件属性(ResourceProperties)
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties
+# 启用Web MVC配置
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration
+# 请求URL映射处理程序适配器(requestMappingHandlerAdapter)
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : requestMappingHandlerAdapter
+# 请求URL映射处理程序的映射(requestMappingHandlerMapping)
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : requestMappingHandlerMapping
+# MVC校验程序
+2017-10-03 00:05:05.903  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : mvcValidator
+# MVC内容协商管理者
+2017-10-03 00:05:05.904  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : mvcContentNegotiationManager
+# MVC请求路径匹配程序
+2017-10-03 00:05:05.904  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : mvcPathMatcher
+2017-10-03 00:05:05.904  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : mvcUrlPathHelper
+# 视图控制器处理程序映射(viewControllerHandlerMapping)
+2017-10-03 00:05:05.904  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : viewControllerHandlerMapping
+# 组件名称处理程序映射
+2017-10-03 00:05:05.904  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : beanNameHandlerMapping
+# 资源处理程序映射
+2017-10-03 00:05:05.904  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : resourceHandlerMapping
+# MVC资源URL提供者
+2017-10-03 00:05:05.904  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : mvcResourceUrlProvider
+# 默认的Servlet处理程序映射(defaultServletHandlerMapping)
+2017-10-03 00:05:05.904  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : defaultServletHandlerMapping
+# MVC约定服务
+2017-10-03 00:05:05.904  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : mvcConversionService
+# MVC URI组件集
+2017-10-03 00:05:05.904  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : mvcUriComponentsContributor
+# HTTP请求处理程序适配器(httpRequestHandlerAdapter)
+2017-10-03 00:05:05.904  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : httpRequestHandlerAdapter
+# 简单的控制器处理程序适配器
+2017-10-03 00:05:05.904  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : simpleControllerHandlerAdapter
+# 处理程序异常解析器(handlerExceptionResolver)
+2017-10-03 00:05:05.904  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : handlerExceptionResolver
+# MVC视图解析器(mvcViewResolver)
+2017-10-03 00:05:05.904  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : mvcViewResolver
+# 图标配置
+2017-10-03 00:05:05.904  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration
+# 图标处理程序映射
+2017-10-03 00:05:05.904  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : faviconHandlerMapping
+# 图标请求处理程序
+2017-10-03 00:05:05.904  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : faviconRequestHandler
+# Web MVC自动配置适配器
+2017-10-03 00:05:05.904  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter
+# 默认的视图解析器
+2017-10-03 00:05:05.904  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : defaultViewResolver
+# 视图解析器(viewResolver)
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : viewResolver
+# 欢迎页面处理程序映射
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : welcomePageHandlerMapping
+# ======= Filter拦截器 =======
+# 请求上下文拦截器(requestContextFilter)
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : requestContextFilter
+# Web MVC自动配置(WebMvcAutoConfiguration)
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration
+# 隐藏的HTTP方法拦截器
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : hiddenHttpMethodFilter
+# HTTP PUT表单内容拦截器
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : httpPutFormContentFilter
+# ======= Audit审计 =======
+# 审计事件存储库配置
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.AuditAutoConfiguration$AuditEventRepositoryConfiguration
+# 审计事件存储库
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : auditEventRepository
+# 审计自动配置(AuditAutoConfiguration)
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.AuditAutoConfiguration
+# 审计监听器
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : auditListener
+# 项目信息自动配置
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration
+# 项目信息属性
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.InfoContributorAutoConfiguration
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : envInfoContributor
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : management.info-org.springframework.boot.actuate.autoconfigure.InfoContributorProperties
+# 磁盘空间健康指标器配置
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfiguration$DiskSpaceHealthIndicatorConfiguration
+# 磁盘空间健康指示器
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : diskSpaceHealthIndicator
+# 磁盘空间健康指示器配置属性
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : diskSpaceHealthIndicatorProperties
+# ======= 健康指标 =======
+# 健康指标器自动配置
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfiguration
+# 健康指标聚合器
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : healthAggregator
+# 健康指标器配置属性
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : management.health.status-org.springframework.boot.actuate.autoconfigure.HealthIndicatorProperties
+# 快速指标服务集配置
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.MetricRepositoryAutoConfiguration$FastMetricServicesConfiguration
+# 计数器缓冲区列表
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : counterBuffers
+# 测量缓冲区列表
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : gaugeBuffers
+# 执行器指标度量读取程序
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : actuatorMetricReader
+# 计数器服务
+2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : counterService
+# 测量服务
+2017-10-03 00:05:05.906  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : gaugeService
+# 指标存储库自动配置
+2017-10-03 00:05:05.906  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.MetricRepositoryAutoConfiguration
+# ======= JMX =======
+# JMX自动配置
+2017-10-03 00:05:05.906  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration
+# JMX组件导出程序
+2017-10-03 00:05:05.906  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : mbeanExporter
+# 对象命名策略
+2017-10-03 00:05:05.906  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : objectNamingStrategy
+# JMX组件服务器
+2017-10-03 00:05:05.906  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : mbeanServer
+# Tomcat指标集配置
+2017-10-03 00:05:05.906  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.PublicMetricsAutoConfiguration$TomcatMetricsConfiguration
+# Tomcat实例的公开指标
+2017-10-03 00:05:05.906  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : tomcatPublicMetrics
+# 公开指标自动配置
+2017-10-03 00:05:05.906  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.PublicMetricsAutoConfiguration
+# 系统的公开指标
+2017-10-03 00:05:05.906  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : systemPublicMetrics
+# 公开指标的指标读取程序
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : metricReaderPublicMetrics
+# ======= Endpoint端点 =======
+# 请求映射端点配置
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.EndpointAutoConfiguration$RequestMappingEndpointConfiguration
+# 请求URL映射端点(requestMappingEndpoint)
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : requestMappingEndpoint
+# 端点自动配置(EndpointAutoConfiguration)
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.EndpointAutoConfiguration
+# 公开可配置环境信息的端点
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : environmentEndpoint
+# 健康指标端点(healthEndpoint)
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : healthEndpoint
+# 注入的组件列表端点(beansEndpoint)
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : beansEndpoint
+# 公开任意应用信息的端点
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : infoEndpoint
+# 日志记录器端点(loggersEndpoint)
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : loggersEndpoint
+# 公开指标数据集端点(metricsEndpoint)
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : metricsEndpoint
+# 请求跟踪端点
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : traceEndpoint
+# 公开线程信息的转储端点(dumpEndpoint)
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : dumpEndpoint
+# 自动配置汇报端点(autoConfigurationReportEndpoint)
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : autoConfigurationReportEndpoint
+# 应用关闭端点(shutdownEndpoint)
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : shutdownEndpoint
+# 配置属性汇报端点
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : configurationPropertiesReportEndpoint
+# 端点配置属性
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : endpoints-org.springframework.boot.actuate.endpoint.EndpointProperties
+# JMX组件公开端点自动配置
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.EndpointMBeanExportAutoConfiguration
+# 端点JMX组件导出程序(endpointMBeanExporter)
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : endpointMBeanExporter
+# 审计事件数据端点
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : auditEventsEndpoint
+# 端点JMX组件导出配置属性
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : endpoints.jmx-org.springframework.boot.actuate.autoconfigure.EndpointMBeanExportProperties
+# JMX管理服务器属性自动配置
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration
+# 服务器属性
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : serverProperties
+# 重复的服务器配置属性检测程序
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : duplicateServerPropertiesDetector
+# JMX管理服务器属性自动配置
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.ManagementServerPropertiesAutoConfiguration
+# JMX管理Servlet配置属性
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : managementServerProperties
+# ======= HTTP请求 =======
+# 字符串HTTP消息转换程序配置
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration
+# 字符串HTTP消息转换程序(stringHttpMessageConverter-注意'UTF-8'编码)
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : stringHttpMessageConverter
+# HTTP编码属性(HttpEncodingProperties)
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : spring.http.encoding-org.springframework.boot.autoconfigure.web.HttpEncodingProperties
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.JacksonHttpMessageConvertersConfiguration$MappingJackson2HttpMessageConverterConfiguration
+# Jackson <-> HTTP消息转换程序
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : mappingJackson2HttpMessageConverter
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.JacksonHttpMessageConvertersConfiguration
+# HTTP消息转换程序集自动配置
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication      [2m: org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration
+# 消息转换程序列表(messageConverters)
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : messageConverters
+# ======= MVC端点 =======
+# JMX服务器上下文的Web MVC端点配置
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.EndpointWebMvcManagementContextConfiguration
+# 端点处理程序映射(endpointHandlerMapping)
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : endpointHandlerMapping
+# 以MVC方式公开的端点(mvcEndpoints)
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : mvcEndpoints
+# 公开可配置环境信息的MVC端点
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : environmentMvcEndpoint
+# 堆内存转储的MVC端点(heapdumpMvcEndpoint)
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : heapdumpMvcEndpoint
+# 健康指标的MVC端点
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : healthMvcEndpoint
+# 日志记录器的MVC端点
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : loggersMvcEndpoint
+# 公开指标数据集的MVC端点
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : metricsMvcEndpoint
+# 审计事件的MVC端点
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : auditEventMvcEndpoint
+# ======= MVC端点属性 =======
+# 健康端点的MVC配置属性
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : endpoints.health-org.springframework.boot.actuate.autoconfigure.HealthMvcEndpointProperties
+# 端点CORS配置属性
+2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : endpoints.cors-org.springframework.boot.actuate.autoconfigure.EndpointCorsProperties
+# Web MVC端点配置
+2017-10-03 00:05:05.908  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfiguration$EndpointWebMvcConfiguration
+# 应用上下文ID拦截器配置
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfiguration$ApplicationContextFilterConfiguration
+# 应用上下文ID拦截器
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : applicationContextIdFilter
+# Web MVC端点自动配置(EndpointWebMvcAutoConfiguration)
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfiguration
+# JMX管理服务器上下文解析器
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : managementContextResolver
+# JMX管理Servlet上下文
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : managementServletContext
+# 指标公开属性配置
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.MetricExportAutoConfiguration$MetricExportPropertiesConfiguration
+# 指标公开属性(MetricExportProperties)
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : spring.metrics.export-org.springframework.boot.actuate.metrics.export.MetricExportProperties
+# Statsd指标配置
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.MetricExportAutoConfiguration$StatsdConfiguration
+# 定时调度任务配置
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.scheduling.annotation.SchedulingConfiguration
+# 内部的定时调度(@Scheduled)注解处理程序(internalScheduledAnnotationProcessor)
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.context.annotation.internalScheduledAnnotationProcessor
+# 指标公开自动配置(MetricExportAutoConfiguration)
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.MetricExportAutoConfiguration
+# 指标汇报的指标写入程序
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : metricWritersMetricExporter
+# 指标拦截器自动配置
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.MetricFilterAutoConfiguration
+# 公开指标数据集拦截器
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : metricsFilter
+# 请求指标度量拦截器配置属性
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : endpoints.metrics.filter-org.springframework.boot.actuate.autoconfigure.MetricFilterProperties
+# 跟踪存储库自动配置
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.TraceRepositoryAutoConfiguration
+# 请求跟踪存储库
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : traceRepository
+# Web请求跟踪拦截器自动配置
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.TraceWebFilterAutoConfiguration
+# Web请求日志记录拦截器(webRequestLoggingFilter)
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : webRequestLoggingFilter
+# 请求跟踪配置属性
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : management.trace-org.springframework.boot.actuate.trace.TraceProperties
+# 上下文配置属性自动配置(ConfigurationPropertiesAutoConfiguration)
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration
+# HTTP请求编码自动配置
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.HttpEncodingAutoConfiguration
+# 字符编码拦截器
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : characterEncodingFilter
+# 区域字符集映射关系自定义
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : localeCharsetMappingsCustomizer
+# 多个部分请求自动配置
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration
+# 多个部分配置元素
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : multipartConfigElement
+# 多个部分解析器
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : multipartResolver
+# 多个部分内容属性
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : spring.http.multipart-org.springframework.boot.autoconfigure.web.MultipartProperties
+# ======= Rest =======
+# Rest风格的请求模板配置
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.WebClientAutoConfiguration$RestTemplateConfiguration
+# Rest风格请求模板的构建者
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : restTemplateBuilder
+2017-03-05 23:48:36.080  INFO 50137 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.WebClientAutoConfiguration
+2017-10-03 00:05:05.909  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.WebClientAutoConfiguration
+

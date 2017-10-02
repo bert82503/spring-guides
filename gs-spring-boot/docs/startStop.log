@@ -1,0 +1,257 @@
+
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.5.7.RELEASE)
+
+2017-10-03 00:05:02.220  INFO 48065 [           main] spring.guides.hello.HelloApplication     : Starting HelloApplication on dannongdembp with PID 48065 (/Users/dannong/Documents/workspace/GitHub/spring-guides/gs-spring-boot/target/classes started by dannong in /Users/dannong/Documents/workspace/GitHub/spring-guides)
+2017-10-03 00:05:02.224  INFO 48065 [           main] spring.guides.hello.HelloApplication     : No active profile set, falling back to default profiles: default
+2017-10-03 00:05:02.288  INFO 48065 [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5606c0b: startup date [Tue Oct 03 00:05:02 CST 2017]; root of context hierarchy
+2017-10-03 00:05:04.037  INFO 48065 [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8086 (http)
+2017-10-03 00:05:04.054  INFO 48065 [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-10-03 00:05:04.055  INFO 48065 [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.20
+2017-10-03 00:05:04.193  INFO 48065 [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-10-03 00:05:04.193  INFO 48065 [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1909 ms
+2017-10-03 00:05:04.501  INFO 48065 [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-10-03 00:05:04.506  INFO 48065 [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'metricsFilter' to: [/*]
+2017-10-03 00:05:04.507  INFO 48065 [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-10-03 00:05:04.507  INFO 48065 [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-10-03 00:05:04.507  INFO 48065 [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-10-03 00:05:04.507  INFO 48065 [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-10-03 00:05:04.507  INFO 48065 [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2017-10-03 00:05:04.507  INFO 48065 [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'applicationContextIdFilter' to: [/*]
+2017-10-03 00:05:05.003  INFO 48065 [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5606c0b: startup date [Tue Oct 03 00:05:02 CST 2017]; root of context hierarchy
+2017-10-03 00:05:05.109  INFO 48065 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.lang.String spring.guides.hello.HelloController.index()
+2017-10-03 00:05:05.113  INFO 48065 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-10-03 00:05:05.113  INFO 48065 [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-10-03 00:05:05.154  INFO 48065 [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-10-03 00:05:05.154  INFO 48065 [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-10-03 00:05:05.203  INFO 48065 [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-10-03 00:05:05.560  INFO 48065 [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/info || /info.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-03 00:05:05.561  INFO 48065 [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/beans || /beans.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-03 00:05:05.561  INFO 48065 [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/health || /health.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,java.security.Principal)
+2017-10-03 00:05:05.562  INFO 48065 [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-03 00:05:05.563  INFO 48065 [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2017-10-03 00:05:05.563  INFO 48065 [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics || /metrics.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-03 00:05:05.564  INFO 48065 [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/dump || /dump.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-03 00:05:05.566  INFO 48065 [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/mappings || /mappings.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-03 00:05:05.567  INFO 48065 [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/auditevents || /auditevents.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public org.springframework.http.ResponseEntity<?> org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint.findByPrincipalAndAfterAndType(java.lang.String,java.util.Date,java.lang.String)
+2017-10-03 00:05:05.568  INFO 48065 [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-03 00:05:05.570  INFO 48065 [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2017-10-03 00:05:05.570  INFO 48065 [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env || /env.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-03 00:05:05.571  INFO 48065 [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}" onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException
+2017-10-03 00:05:05.573  INFO 48065 [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/loggers/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.get(java.lang.String)
+2017-10-03 00:05:05.574  INFO 48065 [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/loggers/{name:.*}],methods=[POST],consumes=[application/vnd.spring-boot.actuator.v1+json || application/json],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.set(java.lang.String,java.util.Map<java.lang.String, java.lang.String>)
+2017-10-03 00:05:05.575  INFO 48065 [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/loggers || /loggers.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-03 00:05:05.575  INFO 48065 [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/trace || /trace.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-10-03 00:05:05.703  INFO 48065 [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-10-03 00:05:05.714  INFO 48065 [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2017-10-03 00:05:05.895  INFO 48065 [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8086 (http)
+2017-10-03 00:05:05.901  INFO 48065 [           main] spring.guides.hello.HelloApplication     : Let's inspect the beans provided by Spring Boot:
+2017-10-03 00:05:05.901  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.context.annotation.internalConfigurationAnnotationProcessor
+2017-10-03 00:05:05.901  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.context.annotation.internalAutowiredAnnotationProcessor
+2017-10-03 00:05:05.901  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.context.annotation.internalRequiredAnnotationProcessor
+2017-10-03 00:05:05.901  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.context.annotation.internalCommonAnnotationProcessor
+2017-10-03 00:05:05.901  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.context.event.internalEventListenerProcessor
+2017-10-03 00:05:05.901  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.context.event.internalEventListenerFactory
+2017-10-03 00:05:05.901  INFO 48065 [           main] spring.guides.hello.HelloApplication     : helloApplication
+2017-10-03 00:05:05.901  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory
+2017-10-03 00:05:05.901  INFO 48065 [           main] spring.guides.hello.HelloApplication     : helloController
+2017-10-03 00:05:05.901  INFO 48065 [           main] spring.guides.hello.HelloApplication     : commandLineRunner
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.AutoConfigurationPackages
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.condition.BeanTypeRegistry
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : propertySourcesPlaceholderConfigurer
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : standardJacksonObjectMapperBuilderCustomizer
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor.store
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : jacksonObjectMapperBuilder
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : jacksonObjectMapper
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : jsonComponentModule
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.websocket.WebSocketAutoConfiguration$TomcatWebSocketConfiguration
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : websocketContainerCustomizer
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.websocket.WebSocketAutoConfiguration
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration$EmbeddedTomcat
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : tomcatEmbeddedServletContainerFactory
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration
+2017-10-03 00:05:05.902  INFO 48065 [           main] spring.guides.hello.HelloApplication     : embeddedServletContainerCustomizerBeanPostProcessor
+2017-10-03 00:05:05.902  INFO 48065  [2m[           main] spring.guides.hello.HelloApplication     : errorPageRegistrarBeanPostProcessor
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletConfiguration
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : dispatcherServlet
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : spring.mvc-org.springframework.boot.autoconfigure.web.WebMvcProperties
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : dispatcherServletRegistration
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : defaultValidator
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : methodValidationPostProcessor
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : error
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : beanNameViewResolver
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : conventionErrorViewResolver
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : errorAttributes
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : basicErrorController
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : errorPageCustomizer
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : preserveErrorControllerTargetClassPostProcessor
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : requestMappingHandlerAdapter
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : requestMappingHandlerMapping
+2017-10-03 00:05:05.903  INFO 48065 [           main] spring.guides.hello.HelloApplication     : mvcValidator
+2017-10-03 00:05:05.904  INFO 48065 [           main] spring.guides.hello.HelloApplication     : mvcContentNegotiationManager
+2017-10-03 00:05:05.904  INFO 48065 [           main] spring.guides.hello.HelloApplication     : mvcPathMatcher
+2017-10-03 00:05:05.904  INFO 48065 [           main] spring.guides.hello.HelloApplication     : mvcUrlPathHelper
+2017-10-03 00:05:05.904  INFO 48065 [           main] spring.guides.hello.HelloApplication     : viewControllerHandlerMapping
+2017-10-03 00:05:05.904  INFO 48065 [           main] spring.guides.hello.HelloApplication     : beanNameHandlerMapping
+2017-10-03 00:05:05.904  INFO 48065 [           main] spring.guides.hello.HelloApplication     : resourceHandlerMapping
+2017-10-03 00:05:05.904  INFO 48065 [           main] spring.guides.hello.HelloApplication     : mvcResourceUrlProvider
+2017-10-03 00:05:05.904  INFO 48065 [           main] spring.guides.hello.HelloApplication     : defaultServletHandlerMapping
+2017-10-03 00:05:05.904  INFO 48065 [           main] spring.guides.hello.HelloApplication     : mvcConversionService
+2017-10-03 00:05:05.904  INFO 48065 [           main] spring.guides.hello.HelloApplication     : mvcUriComponentsContributor
+2017-10-03 00:05:05.904  INFO 48065 [           main] spring.guides.hello.HelloApplication     : httpRequestHandlerAdapter
+2017-10-03 00:05:05.904  INFO 48065 [           main] spring.guides.hello.HelloApplication     : simpleControllerHandlerAdapter
+2017-10-03 00:05:05.904  INFO 48065 [           main] spring.guides.hello.HelloApplication     : handlerExceptionResolver
+2017-10-03 00:05:05.904  INFO 48065 [           main] spring.guides.hello.HelloApplication     : mvcViewResolver
+2017-10-03 00:05:05.904  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration
+2017-10-03 00:05:05.904  INFO 48065 [           main] spring.guides.hello.HelloApplication     : faviconHandlerMapping
+2017-10-03 00:05:05.904  INFO 48065 [           main] spring.guides.hello.HelloApplication     : faviconRequestHandler
+2017-10-03 00:05:05.904  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter
+2017-10-03 00:05:05.904  INFO 48065 [           main] spring.guides.hello.HelloApplication     : defaultViewResolver
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : viewResolver
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : welcomePageHandlerMapping
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : requestContextFilter
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : hiddenHttpMethodFilter
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : httpPutFormContentFilter
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.AuditAutoConfiguration$AuditEventRepositoryConfiguration
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : auditEventRepository
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.AuditAutoConfiguration
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : auditListener
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.InfoContributorAutoConfiguration
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : envInfoContributor
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : management.info-org.springframework.boot.actuate.autoconfigure.InfoContributorProperties
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfiguration$DiskSpaceHealthIndicatorConfiguration
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : diskSpaceHealthIndicator
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : diskSpaceHealthIndicatorProperties
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfiguration
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : healthAggregator
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : management.health.status-org.springframework.boot.actuate.autoconfigure.HealthIndicatorProperties
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.MetricRepositoryAutoConfiguration$FastMetricServicesConfiguration
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : counterBuffers
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : gaugeBuffers
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : actuatorMetricReader
+2017-10-03 00:05:05.905  INFO 48065 [           main] spring.guides.hello.HelloApplication     : counterService
+2017-10-03 00:05:05.906  INFO 48065 [           main] spring.guides.hello.HelloApplication     : gaugeService
+2017-10-03 00:05:05.906  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.MetricRepositoryAutoConfiguration
+2017-10-03 00:05:05.906  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration
+2017-10-03 00:05:05.906  INFO 48065 [           main] spring.guides.hello.HelloApplication     : mbeanExporter
+2017-10-03 00:05:05.906  INFO 48065 [           main] spring.guides.hello.HelloApplication     : objectNamingStrategy
+2017-10-03 00:05:05.906  INFO 48065 [           main] spring.guides.hello.HelloApplication     : mbeanServer
+2017-10-03 00:05:05.906  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.PublicMetricsAutoConfiguration$TomcatMetricsConfiguration
+2017-10-03 00:05:05.906  INFO 48065 [           main] spring.guides.hello.HelloApplication     : tomcatPublicMetrics
+2017-10-03 00:05:05.906  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.PublicMetricsAutoConfiguration
+2017-10-03 00:05:05.906  INFO 48065 [           main] spring.guides.hello.HelloApplication     : systemPublicMetrics
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : metricReaderPublicMetrics
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.EndpointAutoConfiguration$RequestMappingEndpointConfiguration
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : requestMappingEndpoint
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.EndpointAutoConfiguration
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : environmentEndpoint
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : healthEndpoint
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : beansEndpoint
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : infoEndpoint
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : loggersEndpoint
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : metricsEndpoint
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : traceEndpoint
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : dumpEndpoint
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : autoConfigurationReportEndpoint
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : shutdownEndpoint
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : configurationPropertiesReportEndpoint
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : endpoints-org.springframework.boot.actuate.endpoint.EndpointProperties
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.EndpointMBeanExportAutoConfiguration
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : endpointMBeanExporter
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : auditEventsEndpoint
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : endpoints.jmx-org.springframework.boot.actuate.autoconfigure.EndpointMBeanExportProperties
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : serverProperties
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : duplicateServerPropertiesDetector
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.ManagementServerPropertiesAutoConfiguration
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : managementServerProperties
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : stringHttpMessageConverter
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : spring.http.encoding-org.springframework.boot.autoconfigure.web.HttpEncodingProperties
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.JacksonHttpMessageConvertersConfiguration$MappingJackson2HttpMessageConverterConfiguration
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : mappingJackson2HttpMessageConverter
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.JacksonHttpMessageConvertersConfiguration
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication      [2m: org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : messageConverters
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.EndpointWebMvcManagementContextConfiguration
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : endpointHandlerMapping
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : mvcEndpoints
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : environmentMvcEndpoint
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : heapdumpMvcEndpoint
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : healthMvcEndpoint
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : loggersMvcEndpoint
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : metricsMvcEndpoint
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : auditEventMvcEndpoint
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : endpoints.health-org.springframework.boot.actuate.autoconfigure.HealthMvcEndpointProperties
+2017-10-03 00:05:05.907  INFO 48065 [           main] spring.guides.hello.HelloApplication     : endpoints.cors-org.springframework.boot.actuate.autoconfigure.EndpointCorsProperties
+2017-10-03 00:05:05.908  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfiguration$EndpointWebMvcConfiguration
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfiguration$ApplicationContextFilterConfiguration
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : applicationContextIdFilter
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfiguration
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : managementContextResolver
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : managementServletContext
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.MetricExportAutoConfiguration$MetricExportPropertiesConfiguration
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : spring.metrics.export-org.springframework.boot.actuate.metrics.export.MetricExportProperties
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.MetricExportAutoConfiguration$StatsdConfiguration
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.scheduling.annotation.SchedulingConfiguration
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.context.annotation.internalScheduledAnnotationProcessor
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.MetricExportAutoConfiguration
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : metricWritersMetricExporter
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.MetricFilterAutoConfiguration
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : metricsFilter
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : endpoints.metrics.filter-org.springframework.boot.actuate.autoconfigure.MetricFilterProperties
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.TraceRepositoryAutoConfiguration
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : traceRepository
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.TraceWebFilterAutoConfiguration
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : webRequestLoggingFilter
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : management.trace-org.springframework.boot.actuate.trace.TraceProperties
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.HttpEncodingAutoConfiguration
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : characterEncodingFilter
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : localeCharsetMappingsCustomizer
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : multipartConfigElement
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : multipartResolver
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : spring.http.multipart-org.springframework.boot.autoconfigure.web.MultipartProperties
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.WebClientAutoConfiguration$RestTemplateConfiguration
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : restTemplateBuilder
+2017-10-03 00:05:05.909  INFO 48065 [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.WebClientAutoConfiguration
+2017-10-03 00:05:05.913  INFO 48065 [           main] spring.guides.hello.HelloApplication     : Started HelloApplication in 5.501 seconds (JVM running for 6.292)
+
+
+2017-10-03 00:05:36.740  INFO 48065 [nio-8086-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [.\.\.\.\.\.\.\.\.\.\.\.com.wacai.middleware.hokage.api.CacheService..../dubbo-admin-2.8.4/governance/services/com.wacai.middleware.hokage.api.CacheService/providers"; tmp0=eNpdUE1PwkAQDV%2FSaIx69WSIJwPNltKWckPBoKkF%2BTRedNudwuq2W3cLiMaf4%2F90wXhxDvMmM2%2Fem0zvIFwKAUk2kSCuUC3ksY4ZDXCAdbIMAq4LmFOZiY2uRjFPdMJjTBN9y%2F%2FWlionOAYtxVKuuSBFwRmUQwE446IMCQ4YkOKWsk8gxSKLlVcJlAQrpQueQFm5ZZi97jEeYgbHSnBFQxgIuqIM5pCnROMpiK3e0V%2FRJkSAlMWYSnnyf0MWKJG%2FJwDRYk5oRIEUEr5%2BVtfxDJ2BYdTrQWQSF5pGUHeiyHXMhhnY9cixzcjKDf3xjuqryH8schcKr99OX%2FAK68uMMr0tBN7I8x146j07hn846o5GN33%2F6a7f6Xro4ZOSVsUeoIbV6UzGNc8e9kfToT%2Fwp56Pppf3xsw3a7Neu%2B1ZzdsaqlTDrGVYyLYdo2G5DbdZxeGu4ZiupVrIqMbvLfT1%2BAMwOJDM] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2017-10-03 00:05:36.752  INFO 48065 [nio-8086-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-10-03 00:05:36.752  INFO 48065 [nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-10-03 00:05:36.784  INFO 48065 [nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 32 ms
+
+
+2017-10-03 00:05:43.960  INFO 48065 [       Thread-3] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5606c0b: startup date [Tue Oct 03 00:05:02 CST 2017]; root of context hierarchy
+2017-10-03 00:05:43.962  INFO 48065 [       Thread-3] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2017-10-03 00:05:43.964  INFO 48065 [       Thread-3] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+
+Process finished with exit code 130 (interrupted by signal 2: SIGINT)
+
