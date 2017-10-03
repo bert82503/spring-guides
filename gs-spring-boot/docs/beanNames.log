@@ -180,13 +180,13 @@
 2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.InfoContributorAutoConfiguration
 2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : envInfoContributor
 2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : management.info-org.springframework.boot.actuate.autoconfigure.InfoContributorProperties
+# ======= 健康指标 =======
 # 磁盘空间健康指标器配置
 2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfiguration$DiskSpaceHealthIndicatorConfiguration
 # 磁盘空间健康指示器
 2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : diskSpaceHealthIndicator
 # 磁盘空间健康指示器配置属性
 2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : diskSpaceHealthIndicatorProperties
-# ======= 健康指标 =======
 # 健康指标器自动配置
 2017-10-03 00:05:05.905  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfiguration
 # 健康指标聚合器
@@ -226,7 +226,7 @@
 2017-10-03 00:05:05.906  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : systemPublicMetrics
 # 公开指标的指标读取程序
 2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : metricReaderPublicMetrics
-# ======= Endpoint端点 =======
+# ======= 端点/Endpoint =======
 # 请求映射端点配置
 2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.EndpointAutoConfiguration$RequestMappingEndpointConfiguration
 # 请求URL映射端点(requestMappingEndpoint)
@@ -265,6 +265,7 @@
 2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : auditEventsEndpoint
 # 端点JMX组件导出配置属性
 2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : endpoints.jmx-org.springframework.boot.actuate.autoconfigure.EndpointMBeanExportProperties
+# ======= 服务器属性 =======
 # JMX管理服务器属性自动配置
 2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration
 # 服务器属性
@@ -290,7 +291,7 @@
 2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication      [2m: org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration
 # 消息转换程序列表(messageConverters)
 2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : messageConverters
-# ======= MVC端点 =======
+# ======= MVC端点/Endpoint =======
 # JMX服务器上下文的Web MVC端点配置
 2017-10-03 00:05:05.907  INFO 48065 --- [           main] spring.guides.hello.HelloApplication     : org.springframework.boot.actuate.autoconfigure.EndpointWebMvcManagementContextConfiguration
 # 端点处理程序映射(endpointHandlerMapping)
