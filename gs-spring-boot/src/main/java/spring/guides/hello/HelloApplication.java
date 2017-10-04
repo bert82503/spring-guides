@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Bean;
  * @since 2017年03月05日 19:11
  */
 @SpringBootApplication // = @SpringBootConfiguration/@Configuration + @EnableAutoConfiguration + @ComponentScan
-@SuppressWarnings("enter-point")
+@SuppressWarnings("startup-enter-point")
 public class HelloApplication {
 
   private static final Logger logger = LoggerFactory.getLogger(HelloApplication.class);

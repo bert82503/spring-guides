@@ -1,4 +1,4 @@
-package spring.guides.service;
+package spring.guides.dubbo.service;
 
 /**
  * 演示服务。
@@ -8,6 +8,6 @@ package spring.guides.service;
  */
 public interface DemoService {
 
-    String sayHello(String name);
+  String sayHello(String name);
 
 }

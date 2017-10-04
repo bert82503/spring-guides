@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController("sampleController") // = @Controller + @ResponseBody
 @SpringBootApplication // = @SpringBootConfiguration/@Configuration + @EnableAutoConfiguration + @ComponentScan
-@SuppressWarnings("enter-point")
+@SuppressWarnings("startup-enter-point")
 public class SampleController {
 
   @RequestMapping(path = "/")
