@@ -54,6 +54,15 @@
 
   <!-- ================ 属性配置 ================ -->
   <properties>
+    <!-- RPC -->
+    <dubbo.version>2.5.5</dubbo.version>
+    <dubbo.starter.version>1.0.0</dubbo.starter.version>
+    <!--<zookeeper.version>3.4.9</zookeeper.version>-->
+    <zookeeper.version>3.5.3-beta</zookeeper.version>
+    <curator.version>3.3.0</curator.version>
+    <!--<curator.version>4.0.0</curator.version>-->
+    <zkclient.version>0.10</zkclient.version>
+
     <testng.version>6.9.10</testng.version>
 
     <!-- Changing the Java version -->
@@ -70,12 +79,91 @@
         <artifactId>gs-commons</artifactId>
         <version>${project.version}</version>
       </dependency>
+      <dependency>
+        <groupId>com.springframework</groupId>
+        <artifactId>spring-boot-rpc-soa-api</artifactId>
+        <version>${project.version}</version>
+      </dependency>
 
 
       <!-- ================ 二方库 ================ -->
 
 
       <!-- ================ 三方库 ================ -->
+      <!-- ================ RPC/SOA ================ -->
+      <!-- Dubbo: a high-performance RPC framework -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>dubbo</artifactId>
+        <version>${dubbo.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.jboss.netty</groupId>
+            <artifactId>netty</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <!-- Spring Boot with Dubbo support -->
+      <!-- https://github.com/teaey/spring-boot-starter-dubbo -->
+      <dependency>
+        <groupId>io.dubbo.springboot</groupId>
+        <artifactId>spring-boot-starter-dubbo</artifactId>
+        <version>${dubbo.starter.version}</version>
+      </dependency>
+      <!-- https://github.com/alibaba/spring-boot-starter-dubbo -->
+      <!--<dependency>-->
+        <!--<groupId>com.alibaba</groupId>-->
+        <!--<artifactId>spring-boot-starter-dubbo</artifactId>-->
+        <!--<version>1.0.0-SNAPSHOT</version>-->
+      <!--</dependency>-->
+      <!-- Apache ZooKeeper: highly reliable distributed coordination -->
+      <dependency>
+        <groupId>org.apache.zookeeper</groupId>
+        <artifactId>zookeeper</artifactId>
+        <version>${zookeeper.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.curator</groupId>
+        <artifactId>curator-recipes</artifactId>
+        <version>${curator.version}</version>
+        <!--<version>4.0.0</version>-->
+        <!--<exclusions>-->
+          <!--<exclusion>-->
+            <!--<groupId>org.apache.zookeeper</groupId>-->
+            <!--<artifactId>zookeeper</artifactId>-->
+          <!--</exclusion>-->
+        <!--</exclusions>-->
+      </dependency>
+      <dependency>
+        <groupId>com.101tec</groupId>
+        <artifactId>zkclient</artifactId>
+        <version>${zkclient.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
       <dependency>
         <groupId>org.testng</groupId>
         <artifactId>testng</artifactId>
@@ -142,6 +230,7 @@
           <executions>
             <execution>
               <id>attach-sources</id>
+              <phase>verify</phase>
               <goals>
                 <goal>jar</goal>
               </goals>
