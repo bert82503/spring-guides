@@ -2,13 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-
   <parent>
     <groupId>com.springframework</groupId>
     <artifactId>spring-guides</artifactId>
     <version>0.1.0</version>
   </parent>
+  <modelVersion>4.0.0</modelVersion>
 
   <artifactId>spring-boot-rpc-soa-dubbo-consumer</artifactId>
   <packaging>jar</packaging>
@@ -39,6 +38,11 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
       <!-- Production ready features to help you monitor and manage your application. -->
+    </dependency>
+    <!-- Using Jolokia for JMX over HTTP -->
+    <dependency>
+      <groupId>org.jolokia</groupId>
+      <artifactId>jolokia-core</artifactId>
     </dependency>
 
     <!-- ================ RPC/SOA ================ -->
