@@ -1,12 +1,12 @@
-package spring.guides.controller;
+package spring.guides.dubbo.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
+
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import spring.guides.service.UserService;
+import spring.guides.dubbo.service.UserService;
 
 /**
  * 演示控制器。
@@ -16,15 +16,17 @@ import spring.guides.service.UserService;
  */
 @RestController("demoController")
 @RequestMapping(path = "/demo",
-        method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE
+)
+@SuppressWarnings("web-api")
 public class DemoController {
 
-    @Autowired
-    private UserService userService;
+  @Resource
+  private UserService userService;
 
-    @RequestMapping(path = "/say")
-    public String say(String name) {
-        return userService.sayHello(name);
-    }
+  @RequestMapping(path = "/say")
+  public String say(String name) {
+    return userService.sayHello(name);
+  }
 
 }
