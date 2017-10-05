@@ -36,10 +36,10 @@
     <!-- RPC -->
     <module>spring-boot-rpc-soa-api</module>
     <!-- Dubbo -->
-    <module>spring-boot-rpc-soa-dubbo-provider</module>
-    <module>spring-boot-rpc-soa-dubbo-consumer</module>
-    <module>spring-boot-rpc-soa-dubbo-annotation-provider</module>
-    <module>spring-boot-rpc-soa-dubbo-annotation-consumer</module>
+    <module>spring-boot-rpc-soa-dubbo-provider-xml</module>
+    <module>spring-boot-rpc-soa-dubbo-consumer-xml</module>
+    <module>spring-boot-rpc-soa-dubbo-provider-annotation</module>
+    <module>spring-boot-rpc-soa-dubbo-consumer-annotation</module>
     <module>spring-boot-latest-stable-version</module>
     <module>gs-caching</module>
     <module>spring-boot-http</module>
