@@ -26,7 +26,7 @@ DubboSharedHandler-thread-1：共享的执行器服务(WrappedChannelHandler.SHA
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v1.5.7.RELEASE)
 
-# 在哪台机器(192.168.1.2)上使用哪个进程(PID 8677)启动哪个应用入口类(DubboXmlConsumerApplication)，包括应用所在目录
+# 在哪台机器(dannongdembp)上使用哪个进程(PID 8680)启动哪个应用入口类(DubboXmlConsumerApplication)，包括应用所在目录
 2017-10-06 00:39:39.870 [main] INFO  s.g.d.DubboXmlConsumerApplication - Starting DubboXmlConsumerApplication on dannongdembp with PID 8680 (/Users/dannong/Documents/workspace/GitHub/spring-guides/spring-boot-rpc-soa-dubbo-consumer-xml/target/classes started by dannong in /Users/dannong/Documents/workspace/GitHub/spring-guides)
 # 配置文件(profile)设置
 2017-10-06 00:39:39.873 [main] INFO  s.g.d.DubboXmlConsumerApplication - No active profile set, falling back to default profiles: default
@@ -41,7 +41,7 @@ Dubbo-Holder
 2017-10-06 00:39:40.815 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from file [/Users/dannong/Documents/workspace/GitHub/spring-guides/spring-boot-rpc-soa-dubbo-consumer-xml/target/classes/META-INF/spring/dubbo-service-consumer.xml]
 # 日志记录器工厂(log4j)
 2017-10-06 00:39:41.020 [main] INFO  c.a.d.common.logger.LoggerFactory - using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
-# 某组件没有得到被所有后置处理器处理的资格(组件后置处理器检查程序)
+# 组件没有得到被所有后置处理器处理的资格(组件后置处理器检查程序)
 2017-10-06 00:39:41.844 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '${dubbo.application.name}' of type [com.alibaba.dubbo.config.ApplicationConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 2017-10-06 00:39:41.859 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.alibaba.dubbo.config.RegistryConfig' of type [com.alibaba.dubbo.config.RegistryConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 2017-10-06 00:39:41.861 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'demoService' of type [com.alibaba.dubbo.config.spring.ReferenceBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -142,6 +142,7 @@ Dubbo-Holder
 2017-10-06 00:39:45.309 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping - Mapped "{[/beans || /beans.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
 2017-10-06 00:39:45.310 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping - Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
 2017-10-06 00:39:45.311 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping - Mapped "{[/info || /info.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+# 在启动时为JMX暴露注册组件
 2017-10-06 00:39:45.473 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
 2017-10-06 00:39:45.479 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter - Registering beans for JMX exposure on startup
 2017-10-06 00:39:45.484 [main] INFO  o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase 0

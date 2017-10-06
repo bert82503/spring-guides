@@ -6,7 +6,7 @@ main：应用主线程
 Dubbo-Holder：Dubbo持有线程(DubboHolderListener.onApplicationEvent)
 main-SendThread(127.0.0.1:2181)：ZooKeeper线程，服务传出的请求队列并生成心跳检查(ClientCnxn.ClientCnxn() -> ClientCnxn.SendThread)
 main-EventThread：ZooKeeper配置数据事件处理线程(ClientCnxn.ClientCnxn() -> ClientCnxn.EventThread)
-DubboServerHandler-192.168.1.2:20880-thread-{num}：Dubbo服务端处理程序(NettyServer.NettyServer)
+DubboServerHandler-{ip:port}-thread-{num}：Dubbo服务端处理程序(NettyServer.NettyServer)
 New I/O worker #1：Netty工作线程
 DubboShutdownHook：基于JVM关闭钩子的Dubbo关闭线程(AbstractConfig.java:76)
 Thread-{num}：基于JVM关闭钩子的Spring应用上下文关闭线程(AbstractApplicationContext.registerShutdownHook)
@@ -24,7 +24,7 @@ Thread-{num}：基于JVM关闭钩子的Spring应用上下文关闭线程(Abstrac
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v1.5.7.RELEASE)
 
-# 在哪台机器(192.168.1.2)上使用哪个进程(PID 8677)启动哪个应用入口类(DubboXmlProviderApplication)，包括应用所在目录
+# 在哪台机器(dannongdembp)上使用哪个进程(PID 8677)启动哪个应用入口类(DubboXmlProviderApplication)，包括应用所在目录
 2017-10-06 00:35:25.122 [main] INFO  s.g.d.DubboXmlProviderApplication - Starting DubboXmlProviderApplication on dannongdembp with PID 8677 (/Users/dannong/Documents/workspace/GitHub/spring-guides/spring-boot-rpc-soa-dubbo-provider-xml/target/classes started by dannong in /Users/dannong/Documents/workspace/GitHub/spring-guides)
 # 配置文件(profile)设置
 2017-10-06 00:35:25.138 [main] INFO  s.g.d.DubboXmlProviderApplication - No active profile set, falling back to default profiles: default
@@ -44,13 +44,13 @@ Dubbo-Holder
 2017-10-06 00:35:26.659 [main] INFO  c.a.dubbo.config.AbstractConfig -  [DUBBO] The service ready on spring started. service: spring.guides.dubbo.service.DemoService, dubbo version: 2.5.5, current host: 127.0.0.1
 # 导出Dubbo服务提供者到本地注册中心(local registry)
 2017-10-06 00:35:26.758 [main] INFO  c.a.dubbo.config.AbstractConfig -  [DUBBO] Export dubbo service spring.guides.dubbo.service.DemoService to local registry, dubbo version: 2.5.5, current host: 127.0.0.1
-# 导出Dubbo服务提供者为URL(dubbo://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?application=xxx&side=provider)
+# 导出Dubbo服务提供者为URL(dubbo://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?anyhost=true&application=xxx&side=provider)
 2017-10-06 00:35:26.759 [main] INFO  c.a.dubbo.config.AbstractConfig -  [DUBBO] Export dubbo service spring.guides.dubbo.service.DemoService to url dubbo://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?accepts=0&accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-provider&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&methods=sayHello&pid=8677&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507221326673, dubbo version: 2.5.5, current host: 127.0.0.1
-# 注册Dubbo服务提供者的URL到远程注册中心(registry://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?client=curator&group=dubbo_develop&registry=zookeeper)
+# 注册Dubbo服务提供者URL到远程注册中心(registry://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?group=dubbo_develop&registry=zookeeper)
 2017-10-06 00:35:26.759 [main] INFO  c.a.dubbo.config.AbstractConfig -  [DUBBO] Register dubbo service spring.guides.dubbo.service.DemoService url dubbo://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?accepts=0&accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-provider&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&methods=sayHello&pid=8677&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507221326673 to registry registry://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?application=spring-boot-rpc-soa-dubbo-provider&check=true&client=curator&dubbo=2.5.5&file=/Users/dannong/.dubbo/registry.cache&group=dubbo_develop&pid=8677&registry=zookeeper&timestamp=1507221326667, dubbo version: 2.5.5, current host: 127.0.0.1
 # 启动绑定到20880端口(/0.0.0.0:20880)的Netty服务器(NettyServer)，导出服务器通讯地址(/192.168.1.2:20880)
 2017-10-06 00:35:26.942 [main] INFO  c.a.d.r.transport.AbstractServer -  [DUBBO] Start NettyServer bind /0.0.0.0:20880, export /192.168.1.2:20880, dubbo version: 2.5.5, current host: 127.0.0.1
-# 加载本地注册中心存储文件数据(empty://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?category=configurators&side=provider)
+# 加载本地注册中心存储文件数据(xxx.DemoService=empty://192.168.1.2:20880/xxx.DemoService?category=configurators&side=provider)
 2017-10-06 00:35:26.956 [main] INFO  c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Load registry store file /Users/dannong/.dubbo/registry.cache, data: {spring.guides.dubbo.service.DemoService=empty://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?accepts=0&accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-provider&category=configurators&check=false&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&methods=sayHello&pid=7875&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507217014876}, dubbo version: 2.5.5, current host: 127.0.0.1
 ### ======= Zookeeper客户端 =======
 # 启动Zookeeper注册中心的Curator客户端
