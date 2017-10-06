@@ -1,15 +1,15 @@
 
 
-`线程`名称描述
+`线程`名称描述(实例化方法)
 ```
 main：应用主线程
-Dubbo-Holder：Dubbo持有线程
-main-SendThread(127.0.0.1:2181)：ZooKeeper线程，服务传出的请求队列并生成心跳检查
-main-EventThread：ZooKeeper配置数据事件处理线程
-DubboServerHandler-192.168.1.2:20880-thread-{num}：Dubbo服务端处理程序
+Dubbo-Holder：Dubbo持有线程(DubboHolderListener.onApplicationEvent)
+main-SendThread(127.0.0.1:2181)：ZooKeeper线程，服务传出的请求队列并生成心跳检查(ClientCnxn.ClientCnxn() -> ClientCnxn.SendThread)
+main-EventThread：ZooKeeper配置数据事件处理线程(ClientCnxn.ClientCnxn() -> ClientCnxn.EventThread)
+DubboServerHandler-192.168.1.2:20880-thread-{num}：Dubbo服务端处理程序(NettyServer.NettyServer)
 New I/O worker #1：Netty工作线程
-DubboShutdownHook：基于JVM关闭钩子的Dubbo关闭线程
-Thread-2：基于JVM关闭钩子的Spring应用上下文关闭线程
+DubboShutdownHook：基于JVM关闭钩子的Dubbo关闭线程(AbstractConfig.java:76)
+Thread-{num}：基于JVM关闭钩子的Spring应用上下文关闭线程(AbstractApplicationContext.registerShutdownHook)
 ```
 
 
@@ -94,7 +94,7 @@ Dubbo-Holder
 2017-10-06 00:35:27.199 [main-EventThread] INFO  o.a.c.framework.imps.EnsembleTracker - New config event received: {}
 # 订阅Dubbo服务提供者URL(provider://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?application=xxx&category=configurators&side=provider)
 2017-10-06 00:35:27.257 [main] INFO  c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Subscribe: provider://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?accepts=0&accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-provider&category=configurators&check=false&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&methods=sayHello&pid=8677&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507221326673, dubbo version: 2.5.5, current host: 127.0.0.1
-# 通知订阅Dubbo服务提供者URL(provider://xxx)的消费者URL列表(empty://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?category=configurators&side=provider)
+# 通知订阅Dubbo服务提供者URL(provider://xxx)的URL列表(empty://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?category=configurators&side=provider)
 2017-10-06 00:35:27.272 [main] INFO  c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Notify urls for subscribe url provider://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?accepts=0&accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-provider&category=configurators&check=false&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&methods=sayHello&pid=8677&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507221326673, urls: [empty://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?accepts=0&accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-provider&category=configurators&check=false&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&methods=sayHello&pid=8677&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507221326673], dubbo version: 2.5.5, current host: 127.0.0.1
 # 应用已启动
 2017-10-06 00:35:27.319 [main] INFO  s.g.d.DubboXmlProviderApplication - Started DubboXmlProviderApplication in 3.355 seconds (JVM running for 4.714)
