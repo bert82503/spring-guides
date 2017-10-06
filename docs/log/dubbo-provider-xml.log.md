@@ -115,7 +115,7 @@ Dubbo-Holder
 2017-10-06 00:41:16.852 [DubboServerHandler-192.168.1.2:20880-thread-1] INFO  c.a.d.r.protocol.dubbo.DubboProtocol -  [DUBBO] disconected from /0:0:0:0:0:0:0:1:51862,url:dubbo://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?accepts=0&accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-provider&channel.readonly.sent=true&codec=dubbo&dubbo=2.5.5&generic=false&heartbeat=60000&interface=spring.guides.dubbo.service.DemoService&methods=sayHello&pid=8677&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507221326673, dubbo version: 2.5.5, current host: 127.0.0.1
 
 
-### ======= 所有Zookeeper客户端套接字连接都已断开 =======
+### ======= Dubbo服务消费方某JVM实例关闭 =======
 # 所有客户端套接字连接都已断开，现在可以优雅地关闭(Dubbo服务器)
 2017-10-06 00:41:35.010 [New I/O worker #1] WARN  c.a.d.r.transport.AbstractServer -  [DUBBO] All clients has discontected from /192.168.1.2:20880. You can graceful shutdown now., dubbo version: 2.5.5, current host: 127.0.0.1
 # 连接断开来自某客户端(/192.168.1.2:51855)的某服务URL(dubbo://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?channel.readonly.sent=true&codec=dubbo&side=provider)
