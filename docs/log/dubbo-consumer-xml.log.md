@@ -8,7 +8,7 @@ localhost-startStop-1：处理Tomcat容器的启动和停止事件的线程(Cont
 background-preinit：以后台线程的方式触发Spring Boot应用的早期初始化过程(BackgroundPreinitializer.onApplicationEvent)
 main-SendThread(127.0.0.1:2181)：ZooKeeper线程，服务传出的请求队列并生成心跳检查(ClientCnxn.ClientCnxn() -> ClientCnxn.SendThread)
 main-EventThread：ZooKeeper配置数据事件处理线程(ClientCnxn.ClientCnxn() -> ClientCnxn.EventThread)
-http-nio-8080-exec-1：Tomcat执行请求的任务线程(AbstractProtocol.getName -> Http11NioProtocol.getNamePrefix)
+http-nio-8080-exec-{num}：Tomcat执行请求的任务线程(AbstractProtocol.getName -> Http11NioProtocol.getNamePrefix)
 DubboShutdownHook：基于JVM关闭钩子的Dubbo关闭线程(AbstractConfig.java:76)
 Thread-{num}：基于JVM关闭钩子的Spring应用上下文关闭线程(AbstractApplicationContext.registerShutdownHook)
 DubboSharedHandler-thread-1：共享的执行器服务(WrappedChannelHandler.SHARED_EXECUTOR)
@@ -41,10 +41,6 @@ Dubbo-Holder
 2017-10-06 00:39:40.815 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from file [/Users/dannong/Documents/workspace/GitHub/spring-guides/spring-boot-rpc-soa-dubbo-consumer-xml/target/classes/META-INF/spring/dubbo-service-consumer.xml]
 # 日志记录器工厂(log4j)
 2017-10-06 00:39:41.020 [main] INFO  c.a.d.common.logger.LoggerFactory - using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
-# 组件没有得到被所有后置处理器处理的资格(组件后置处理器检查程序)
-2017-10-06 00:39:41.844 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '${dubbo.application.name}' of type [com.alibaba.dubbo.config.ApplicationConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2017-10-06 00:39:41.859 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.alibaba.dubbo.config.RegistryConfig' of type [com.alibaba.dubbo.config.RegistryConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2017-10-06 00:39:41.861 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'demoService' of type [com.alibaba.dubbo.config.spring.ReferenceBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 ### ======= Tomcat =======
 2017-10-06 00:39:42.611 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
 2017-10-06 00:39:42.650 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
@@ -59,7 +55,7 @@ Dubbo-Holder
 2017-10-06 00:39:43.195 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 2017-10-06 00:39:43.195 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'webRequestLoggingFilter' to: [/*]
 2017-10-06 00:39:43.196 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'applicationContextIdFilter' to: [/*]
-# 加载本地注册中心存储文件数据(empty://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?category=configurators&side=provider)
+# 加载本地注册中心存储文件数据(xxx.DemoService=empty://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?category=configurators&side=provider)
 2017-10-06 00:39:43.362 [main] INFO  c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Load registry store file /Users/dannong/.dubbo/registry.cache, data: {spring.guides.dubbo.service.DemoService=empty://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?accepts=0&accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-provider&category=configurators&check=false&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&methods=sayHello&pid=8677&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507221326673}, dubbo version: 2.5.5, current host: 127.0.0.1
 ### ======= Zookeeper客户端 =======
 # 启动Zookeeper注册中心的Curator客户端
@@ -186,12 +182,13 @@ Dubbo-Holder
 2017-10-06 00:41:34.997 [DubboShutdownHook] INFO  c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Destroy unregister url consumer://192.168.1.2/spring.guides.dubbo.service.DemoService?application=spring-boot-rpc-soa-dubbo-consumer&category=consumers&check=false&dubbo=2.5.5&interface=spring.guides.dubbo.service.DemoService&methods=sayHello&pid=8680&side=consumer&timestamp=1507221583279, dubbo version: 2.5.5, current host: 192.168.1.2
 # 销毁取消订阅的Dubbo服务消费者URL(consumer://192.168.1.2/spring.guides.dubbo.service.DemoService?application=xxx&category=providers,configurators,routers&side=consumer)
 2017-10-06 00:41:34.998 [DubboShutdownHook] INFO  c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Destroy unsubscribe url consumer://192.168.1.2/spring.guides.dubbo.service.DemoService?application=spring-boot-rpc-soa-dubbo-consumer&category=providers,configurators,routers&dubbo=2.5.5&interface=spring.guides.dubbo.service.DemoService&methods=sayHello&pid=8680&side=consumer&timestamp=1507221583279, dubbo version: 2.5.5, current host: 192.168.1.2
+# 在阶段0中停止组件(默认的组件生命周期处理程序)
 2017-10-06 00:41:34.998 [Thread-3] INFO  o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase 0
 # 退出Curator后台操作循环
 2017-10-06 00:41:34.999 [Curator-Framework-0] INFO  o.a.c.f.imps.CuratorFrameworkImpl - backgroundOperationsLoop exiting
+# 在关闭时注销JMX暴露的组件
 2017-10-06 00:41:35.000 [Thread-3] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter - Unregistering JMX-exposed beans on shutdown
 2017-10-06 00:41:35.000 [Thread-3] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter - Unregistering JMX-exposed beans
-# 在关闭时注销JMX暴露的组件
 2017-10-06 00:41:35.002 [Thread-3] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
 # 关闭Netty通信通道(/192.168.1.2:51855 => /192.168.1.2:20880)
 2017-10-06 00:41:35.008 [Thread-3] INFO  c.a.d.r.transport.netty.NettyChannel -  [DUBBO] Close netty channel [id: 0xbc26bf40, /192.168.1.2:51855 => /192.168.1.2:20880], dubbo version: 2.5.5, current host: 192.168.1.2
