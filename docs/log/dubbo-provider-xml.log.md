@@ -13,28 +13,35 @@ Thread-{num}：基于JVM关闭钩子的Spring应用上下文关闭线程(Abstrac
 ```
 
 ### 启动步骤
+```
+0. 'Dubbo持有线程'开始运行
 1. 应用上下文加载Dubbo服务提供者的XML组件定义
 2. Dubbo服务提供者已准备好
 3. 导出Dubbo服务提供者为URL
 4. 开始注册Dubbo服务提供者URL到注册中心(registry)
-5. 启动Netty服务器
+5. 启动绑定到20880端口的Netty服务器
 6. 加载本地注册中心存储文件数据
 7. 建立与注册中心的套接字连接会话
   1. 注册Dubbo服务提供者URL
   2. 订阅Dubbo服务提供者URL
   3. 通知订阅Dubbo服务提供者URL的URL列表
-8. Zookeeper收到收到新的配置事件
+8. Zookeeper客户端收到新的配置事件
+```
 
 ### 关闭步骤
-1. Dubbo关闭钩子(DubboShutdownHook)开始关闭所有注册中心
-2. 销毁某个注册中心
+```
+0. 现在运行Dubbo关闭钩子(DubboShutdownHook)
+1. 关闭应用上下文
+2. 关闭所有注册中心
+3. 销毁某个注册中心
   1. 销毁注销的Dubbo服务提供者URL
   2. 销毁取消订阅的Dubbo服务提供者URL
   3. ZooKeeper会话已关闭
   4. ZooKeeper事件处理线程关闭会话
-3. 关闭Dubbo服务器
+4. 关闭Dubbo服务器
   1. 关闭绑定到20880端口的Netty服务器
-4. 应用上下文停止组件
+5. 应用上下文停止组件
+```
 
 ### 日志
 ```java
@@ -84,7 +91,7 @@ Dubbo-Holder
 2017-10-06 00:35:27.102 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.version=1.8.0_112
 2017-10-06 00:35:27.102 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.vendor=Oracle Corporation
 2017-10-06 00:35:27.102 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.home=/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre
-2017-10-06 00:35:27.102 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.class.path=/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/lib/tools.jar:/Users/dannong/Documents/workspace/GitHub/spring-guides/spring-boot-rpc-soa-dubbo-provider-xml/target/classes:/Users/dannong/Documents/workspace/GitHub/spring-guides/spring-boot-rpc-soa-api/target/classes:/Users/dannong/.m2/repository/com/alibaba/dubbo/2.5.5/dubbo-2.5.5.jar:/Users/dannong/.m2/repository/org/springframework/spring-beans/4.3.11.RELEASE/spring-beans-4.3.11.RELEASE.jar:/Users/dannong/.m2/repository/org/springframework/spring-core/4.3.11.RELEASE/spring-core-4.3.11.RELEASE.jar:/Users/dannong/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/dannong/.m2/repository/org/springframework/spring-context/4.3.11.RELEASE/spring-context-4.3.11.RELEASE.jar:/Users/dannong/.m2/repository/org/springframework/spring-aop/4.3.11.RELEASE/spring-aop-4.3.11.RELEASE.jar:/Users/dannong/.m2/repository/org/springframework/spring-expression/4.3.11.RELEASE/spring-expression-4.3.11.RELEASE.jar:/Users/dannong/.m2/repository/org/javassist/javassist/3.21.0-GA/javassist-3.21.0-GA.jar:/Users/dannong/.m2/repository/org/springframework/spring-web/4.3.11.RELEASE/spring-web-4.3.11.RELEASE.jar:/Users/dannong/.m2/repository/io/dubbo/springboot/spring-boot-starter-dubbo/1.0.0/spring-boot-starter-dubbo-1.0.0.jar:/Users/dannong/.m2/repository/org/springframework/boot/spring-boot-starter/1.5.7.RELEASE/spring-boot-starter-1.5.7.RELEASE.jar:/Users/dannong/.m2/repository/org/springframework/boot/spring-boot/1.5.7.RELEASE/spring-boot-1.5.7.RELEASE.jar:/Users/dannong/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/1.5.7.RELEASE/spring-boot-autoconfigure-1.5.7.RELEASE.jar:/Users/dannong/.m2/repository/org/springframework/boot/spring-boot-starter-logging/1.5.7.RELEASE/spring-boot-starter-logging-1.5.7.RELEASE.jar:/Users/dannong/.m2/repository/ch/qos/logback/logback-classic/1.1.11/logback-classic-1.1.11.jar:/Users/dannong/.m2/repository/ch/qos/logback/logback-core/1.1.11/logback-core-1.1.11.jar:/Users/dannong/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/Users/dannong/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.25/jcl-over-slf4j-1.7.25.jar:/Users/dannong/.m2/repository/org/slf4j/jul-to-slf4j/1.7.25/jul-to-slf4j-1.7.25.jar:/Users/dannong/.m2/repository/org/slf4j/log4j-over-slf4j/1.7.25/log4j-over-slf4j-1.7.25.jar:/Users/dannong/.m2/repository/org/yaml/snakeyaml/1.17/snakeyaml-1.17.jar:/Users/dannong/.m2/repository/com/101tec/zkclient/0.10/zkclient-0.10.jar:/Users/dannong/.m2/repository/org/apache/zookeeper/zookeeper/3.5.3-beta/zookeeper-3.5.3-beta.jar:/Users/dannong/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/Users/dannong/.m2/repository/io/netty/netty/3.10.5.Final/netty-3.10.5.Final.jar:/Users/dannong/.m2/repository/org/apache/curator/curator-recipes/3.3.0/curator-recipes-3.3.0.jar:/Users/dannong/.m2/repository/org/apache/curator/curator-framework/3.3.0/curator-framework-3.3.0.jar:/Users/dannong/.m2/repository/org/apache/curator/curator-client/3.3.0/curator-client-3.3.0.jar:/Users/dannong/.m2/repository/com/google/guava/guava/16.0.1/guava-16.0.1.jar:/Applications/IntelliJ IDEA 16.app/Contents/lib/idea_rt.jar
+2017-10-06 00:35:27.102 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.class.path=.../lib/rt.jar:.../lib/tools.jar:.../spring-guides/spring-boot-rpc-soa-dubbo-provider-xml/target/classes:.../spring-guides/spring-boot-rpc-soa-api/target/classes:.../.m2/repository/com/alibaba/dubbo/2.5.5/dubbo-2.5.5.jar:/Users/dannong/.m2/repository/org/springframework/boot/spring-boot-starter/1.5.7.RELEASE/spring-boot-starter-1.5.7.RELEASE.jar
 2017-10-06 00:35:27.102 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.library.path=/Users/dannong/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
 2017-10-06 00:35:27.102 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.io.tmpdir=/var/folders/0y/kzmh046n3bqb07pwdrq_zy_r0000gn/T/
 2017-10-06 00:35:27.102 [main] INFO  org.apache.zookeeper.ZooKeeper - Client environment:java.compiler=<NA>
