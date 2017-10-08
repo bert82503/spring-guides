@@ -12,8 +12,7 @@ DubboShutdownHook：基于JVM关闭钩子的Dubbo关闭线程(AbstractConfig.jav
 Thread-{num}：基于JVM关闭钩子的Spring应用上下文关闭线程(AbstractApplicationContext.registerShutdownHook)
 ```
 
-
-#### 启动步骤
+### 启动步骤
 1. 应用上下文加载Dubbo服务提供者的XML组件定义
 2. Dubbo服务提供者已准备好
 3. 导出Dubbo服务提供者为URL
@@ -26,8 +25,7 @@ Thread-{num}：基于JVM关闭钩子的Spring应用上下文关闭线程(Abstrac
   3. 通知订阅Dubbo服务提供者URL的URL列表
 8. Zookeeper收到收到新的配置事件
 
-
-#### 关闭步骤
+### 关闭步骤
 1. Dubbo关闭钩子(DubboShutdownHook)开始关闭所有注册中心
 2. 销毁某个注册中心
   1. 销毁注销的Dubbo服务提供者URL
@@ -38,8 +36,7 @@ Thread-{num}：基于JVM关闭钩子的Spring应用上下文关闭线程(Abstrac
   1. 关闭绑定到20880端口的Netty服务器
 4. 应用上下文停止组件
 
-
-#### 启动关闭日志
+### 日志
 ```java
 # Spring Boot横幅，包括其版本
   .   ____          _            __ _ _

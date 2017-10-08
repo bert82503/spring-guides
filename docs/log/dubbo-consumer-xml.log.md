@@ -14,8 +14,27 @@ Thread-{num}：基于JVM关闭钩子的Spring应用上下文关闭线程(Abstrac
 DubboSharedHandler-thread-1：共享的执行器服务(WrappedChannelHandler.SHARED_EXECUTOR)
 ```
 
+### 启动步骤
+1. Web应用上下文加载Dubbo服务消费者的XML组件定义
+2. 加载本地注册中心存储文件数据
+3. 建立与注册中心的套接字连接会话
+  1. 注册Dubbo服务消费者的URL
+  2. 订阅Dubbo服务消费者URL
+  3. 通知订阅Dubbo服务消费者URL的URL列表
+4. 启动Netty客户端连接到Dubbo服务器
+5. 从注册中心URL引用Dubbo服务
 
-#### 启动日志
+### 关闭步骤
+1. Dubbo关闭钩子(DubboShutdownHook)开始关闭所有注册中心
+2. 销毁某个注册中心
+  1. 销毁注销的Dubbo服务消费者URL
+  2. 销毁取消订阅的Dubbo服务消费者URL
+  3. ZooKeeper会话已关闭
+  4. ZooKeeper事件处理线程关闭会话
+3. 关闭Dubbo连接
+4. Web应用上下文关闭Netty通信通道
+
+### 日志
 ```java
 # Spring Boot横幅，包括其版本
   .   ____          _            __ _ _
