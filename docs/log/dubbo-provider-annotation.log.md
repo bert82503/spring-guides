@@ -13,7 +13,7 @@ New I/O worker #1：Netty工作线程
 ```
 
 
-#### 启动日志
+#### 启动关闭日志
 ```java
 # Spring Boot横幅，包括其版本
   .   ____          _            __ _ _
@@ -41,7 +41,7 @@ Dubbo-Holder
 2017-10-06 17:19:03.677 [main] INFO  c.a.dubbo.config.AbstractConfig -  [DUBBO] Export dubbo service spring.guides.dubbo.service.DemoService to local registry, dubbo version: 2.5.5, current host: 127.0.0.1
 # 导出Dubbo服务提供者为URL(dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?anyhost=true&application=xxx&side=provider)
 2017-10-06 17:19:03.677 [main] INFO  c.a.dubbo.config.AbstractConfig -  [DUBBO] Export dubbo service spring.guides.dubbo.service.DemoService to url dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-annotation-provider&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&logger=slf4j&methods=sayHello&organization=middle-ware&owner=dannong&pid=11654&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507281543597, dubbo version: 2.5.5, current host: 127.0.0.1
-# 注册Dubbo服务提供者URL到远程注册中心(registry://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?group=dubbo_develop&registry=zookeeper)
+# 开始注册Dubbo服务提供者URL到远程注册中心(registry://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?group=dubbo_develop&registry=zookeeper)
 2017-10-06 17:19:03.678 [main] INFO  c.a.dubbo.config.AbstractConfig -  [DUBBO] Register dubbo service spring.guides.dubbo.service.DemoService url dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-annotation-provider&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&logger=slf4j&methods=sayHello&organization=middle-ware&owner=dannong&pid=11654&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507281543597 to registry registry://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?application=spring-boot-rpc-soa-dubbo-annotation-provider&check=true&client=curator&dubbo=2.5.5&file=/Users/dannong/.dubbo/registry.cache&group=dubbo_develop&logger=slf4j&organization=middle-ware&owner=dannong&pid=11654&registry=zookeeper&timestamp=1507281533442, dubbo version: 2.5.5, current host: 127.0.0.1
 # 启动绑定到20880端口(/0.0.0.0:20880)的Netty服务器(NettyServer)，导出服务器通讯地址(/10.1.112.138:20880)
 2017-10-06 17:19:03.886 [main] INFO  c.a.d.r.transport.AbstractServer -  [DUBBO] Start NettyServer bind /0.0.0.0:20880, export /10.1.112.138:20880, dubbo version: 2.5.5, current host: 127.0.0.1
@@ -77,7 +77,7 @@ Dubbo-Holder
 2017-10-06 17:19:14.157 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
 # 使用默认的协议模式
 2017-10-06 17:19:14.164 [main] INFO  o.a.c.f.imps.CuratorFrameworkImpl - Default schema
-# 注册Dubbo服务提供者的URL
+# 注册Dubbo服务提供者URL
 2017-10-06 17:19:14.165 [main] INFO  c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Register: dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-annotation-provider&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&logger=slf4j&methods=sayHello&organization=middle-ware&owner=dannong&pid=11654&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507281543597, dubbo version: 2.5.5, current host: 127.0.0.1
 # 套接字连接已建立，初始化客户端与服务端的会话(/127.0.0.1:55194 -> 127.0.0.1/127.0.0.1:2181)
 2017-10-06 17:19:14.166 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:55194, server: 127.0.0.1/127.0.0.1:2181
