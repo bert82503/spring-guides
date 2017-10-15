@@ -16,7 +16,7 @@ New I/O worker #1：Netty工作线程
 ```
 0. 'Dubbo持有线程'开始运行
 1. 应用上下文扫描Dubbo服务提供者的@Service注解组件定义
-2. 导出Dubbo服务提供者为URL
+2. 暴露Dubbo服务提供者为URL
 3. 开始注册Dubbo服务提供者URL到注册中心(registry)
 4. 启动绑定到20880端口的Netty服务器
 5. 加载本地注册中心存储文件数据
@@ -41,7 +41,7 @@ New I/O worker #1：Netty工作线程
   1. 关闭绑定到20880端口的Netty服务器
   2. 所有客户端套接字连接都已断开，现在可以优雅地关闭(Dubbo服务器)
   3. 连接断开来自某客户端的某服务URL
-  4. 未导出的Dubbo服务
+  4. 注销暴露的Dubbo服务
 5. 应用上下文停止组件
 ```
 
@@ -69,13 +69,13 @@ Dubbo-Holder
 2017-10-06 17:18:52.349 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@19d37183: startup date [Fri Oct 06 17:18:52 CST 2017]; root of context hierarchy
 # 日志记录器工厂(slf4j)
 2017-10-06 17:18:52.963 [main] INFO  c.a.d.common.logger.LoggerFactory - using logger: com.alibaba.dubbo.common.logger.slf4j.Slf4jLoggerAdapter
-# 导出Dubbo服务提供者到本地注册中心(local registry)
+# 暴露Dubbo服务提供者到本地(本地调用/本地服务)
 2017-10-06 17:19:03.677 [main] INFO  c.a.dubbo.config.AbstractConfig -  [DUBBO] Export dubbo service spring.guides.dubbo.service.DemoService to local registry, dubbo version: 2.5.5, current host: 127.0.0.1
-# 导出Dubbo服务提供者为URL(dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?anyhost=true&application=xxx&side=provider)
+# 暴露Dubbo服务提供者为URL(dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?anyhost=true&application=xxx&side=provider)
 2017-10-06 17:19:03.677 [main] INFO  c.a.dubbo.config.AbstractConfig -  [DUBBO] Export dubbo service spring.guides.dubbo.service.DemoService to url dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-annotation-provider&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&logger=slf4j&methods=sayHello&organization=middle-ware&owner=dannong&pid=11654&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507281543597, dubbo version: 2.5.5, current host: 127.0.0.1
 # 开始注册Dubbo服务提供者URL到注册中心(registry://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?group=dubbo_develop&registry=zookeeper)
 2017-10-06 17:19:03.678 [main] INFO  c.a.dubbo.config.AbstractConfig -  [DUBBO] Register dubbo service spring.guides.dubbo.service.DemoService url dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-annotation-provider&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&logger=slf4j&methods=sayHello&organization=middle-ware&owner=dannong&pid=11654&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507281543597 to registry registry://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?application=spring-boot-rpc-soa-dubbo-annotation-provider&check=true&client=curator&dubbo=2.5.5&file=/Users/dannong/.dubbo/registry.cache&group=dubbo_develop&logger=slf4j&organization=middle-ware&owner=dannong&pid=11654&registry=zookeeper&timestamp=1507281533442, dubbo version: 2.5.5, current host: 127.0.0.1
-# 启动绑定到20880端口(/0.0.0.0:20880)的Netty服务器(NettyServer)，导出服务器通讯地址(/10.1.112.138:20880)
+# 启动绑定到20880端口(/0.0.0.0:20880)的Netty服务器(NettyServer)，暴露服务器通讯地址(/10.1.112.138:20880)
 2017-10-06 17:19:03.886 [main] INFO  c.a.d.r.transport.AbstractServer -  [DUBBO] Start NettyServer bind /0.0.0.0:20880, export /10.1.112.138:20880, dubbo version: 2.5.5, current host: 127.0.0.1
 # 加载本地注册中心存储文件数据(xxx.DemoService=empty://10.1.112.138/xxx.DemoService?category=configurators&side=consumer empty://xxx/xxx.DemoService?category=routers&side=consumer dubbo://10.1.112.138:20880/xxx.DemoService?side=provider)
 2017-10-06 17:19:03.904 [main] INFO  c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Load registry store file /Users/dannong/.dubbo/registry.cache, data: {spring.guides.dubbo.service.DemoService=empty://10.1.112.138/spring.guides.dubbo.service.DemoService?application=spring-boot-rpc-soa-dubbo-consumer&category=configurators&dubbo=2.5.5&interface=spring.guides.dubbo.service.DemoService&logger=slf4j&methods=sayHello&pid=11606&side=consumer&timestamp=1507281010835 empty://10.1.112.138/spring.guides.dubbo.service.DemoService?application=spring-boot-rpc-soa-dubbo-consumer&category=routers&dubbo=2.5.5&interface=spring.guides.dubbo.service.DemoService&logger=slf4j&methods=sayHello&pid=11606&side=consumer&timestamp=1507281010835 dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?accepts=0&accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-provider&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&logger=slf4j&methods=sayHello&pid=11546&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507280828592}, dubbo version: 2.5.5, current host: 127.0.0.1
@@ -166,9 +166,9 @@ Dubbo-Holder
 2017-10-06 17:24:27.025 [New I/O worker #1] WARN  c.a.d.r.transport.AbstractServer -  [DUBBO] All clients has discontected from /10.1.112.138:20880. You can graceful shutdown now., dubbo version: 2.5.5, current host: 127.0.0.1
 # 连接断开来自某客户端(/10.1.112.138:55206)的某服务URL(dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?channel.readonly.sent=true&codec=dubbo&side=provider)
 2017-10-06 17:24:27.026 [DubboSharedHandler-thread-1] INFO  c.a.d.r.protocol.dubbo.DubboProtocol -  [DUBBO] disconected from /10.1.112.138:55206,url:dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-annotation-provider&channel.readonly.sent=true&codec=dubbo&dubbo=2.5.5&generic=false&heartbeat=60000&interface=spring.guides.dubbo.service.DemoService&logger=slf4j&methods=sayHello&organization=middle-ware&owner=dannong&pid=11654&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507281543597, dubbo version: 2.5.5, current host: 127.0.0.1
-# 未导出的Dubbo服务(dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?side=provider)
+# 注销暴露的Dubbo服务(dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?side=provider)
 2017-10-06 17:24:27.031 [DubboShutdownHook] INFO  c.a.d.r.protocol.dubbo.DubboProtocol -  [DUBBO] Unexport service: dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-annotation-provider&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&logger=slf4j&methods=sayHello&organization=middle-ware&owner=dannong&pid=11654&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507281543597, dubbo version: 2.5.5, current host: 127.0.0.1
-# 未导出的Dubbo服务(injvm://127.0.0.1/spring.guides.dubbo.service.DemoService?side=provider)
+# 注销暴露的Dubbo服务(injvm://127.0.0.1/spring.guides.dubbo.service.DemoService?side=provider)
 2017-10-06 17:24:27.031 [DubboShutdownHook] INFO  c.a.d.r.protocol.injvm.InjvmProtocol -  [DUBBO] Unexport service: injvm://127.0.0.1/spring.guides.dubbo.service.DemoService?accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-annotation-provider&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&logger=slf4j&methods=sayHello&organization=middle-ware&owner=dannong&pid=11654&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507281543597, dubbo version: 2.5.5, current host: 127.0.0.1
 
 # 应用进程完成退出
