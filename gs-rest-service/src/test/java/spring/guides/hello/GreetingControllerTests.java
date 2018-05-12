@@ -1,6 +1,6 @@
 package spring.guides.hello;
 
-import spring.guides.test.junit4.AbstractJUnit4MockWebMvcTests;
+import spring.guides.test.junit.AbstractJUnitMockWebMvcTests;
 
 import org.junit.Test;
 
@@ -13,7 +13,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @author dannong
  * @since 2017年02月21日 23:59
  */
-public class GreetingControllerTests extends AbstractJUnit4MockWebMvcTests {
+public class GreetingControllerTests extends AbstractJUnitMockWebMvcTests {
 
     @Test
     public void noParam() throws Exception {

@@ -11,6 +11,10 @@
   <!-- 提供方应用信息，用于计算依赖关系 -->
   <dubbo:application
       name="${dubbo.application.name}"
+      owner="${dubbo.application.owner:}"
+      organization="${dubbo.application.organization:}"
+      architecture="${dubbo.application.architecture:biz}"
+      environment="${dubbo.application.environment:product}"
       logger="${dubbo.application.logger:slf4j}"
   />
 
@@ -21,6 +25,8 @@
       protocol="${dubbo.registry.protocol:zookeeper}"
       group="${dubbo.registry.group}"
       client="${dubbo.registry.client:curator}"
+      timeout="${dubbo.registry.timeout:5000}"
+      session="${dubbo.registry.session:60000}"
       file="${dubbo.registry.file}"
       check="${dubbo.registry.check:true}"
   />
@@ -29,36 +35,34 @@
   <!-- ======= provider-side ======= -->
   <!-- 用dubbo协议在20880端口暴露服务 -->
   <dubbo:protocol
-      name="${dubbo.protocol.name:dubbo}"
       port="${dubbo.protocol.port:20880}"
-      threadpool="${dubbo.protocol.threadpool:fixed}"
-      threads="${dubbo.protocol.threads:100}"
-      accepts="${dubbo.protocol.accepts:0}"
-      accesslog="${dubbo.protocol.accesslog:false}"
+      threadpool="${dubbo.protocol.threadpool:cached}"
+      threads="${dubbo.protocol.threads:200}"
+      queues="${dubbo.protocol.queues:0}"
+      accesslog="${dubbo.protocol.accesslog:true}"
   />
 
   <!-- 服务提供者 -->
-  <!-- Provider: 暴露服务的服务提供方 -->
-  <!--<dubbo:provider-->
-      <!--group="${dubbo.provider.group:}"-->
-      <!--delay="${dubbo.provider.delay:0}"-->
-      <!--timeout="${dubbo.provider.timeout:1000}"-->
-      <!--retries="${dubbo.provider.retries:2}"-->
-      <!--connections="${dubbo.provider.connections:0}"-->
-      <!--loadbalance="${dubbo.provider.loadbalance:random}"-->
-      <!--async="${dubbo.provider.async:false}"-->
-      <!--stub="${dubbo.provider.stub:false}"-->
-      <!--mock="${dubbo.provider.mock:false}"-->
-      <!--cluster="${dubbo.provider.cluster:failover}"-->
-      <!--queues="${dubbo.provider.queues:0}"-->
-  <!--/>-->
-
-  <!-- 声明需要暴露的服务接口 -->
-  <!-- Type: providers, configurators -->
-  <dubbo:service
-      interface="spring.guides.dubbo.service.DemoService"
-      ref="demoService"
-      timeout="1000" retries="1"
+  <!-- Provider: 暴露服务的服务提供者 -->
+  <dubbo:provider
+      group="${dubbo.provider.group:}"
+      version="${dubbo.provider.version:}"
+      delay="${dubbo.provider.delay:0}"
+      timeout="${dubbo.provider.timeout:1000}"
+      retries="${dubbo.provider.retries:0}"
+      loadbalance="${dubbo.provider.loadbalance:roundrobin}"
+      cluster="${dubbo.provider.cluster:failfast}"
   />
+
+  <!-- Service: 声明需要暴露的服务接口 -->
+  <!-- Type: providers, configurators -->
+  <dubbo:service interface="spring.guides.dubbo.service.DemoService" ref="demoService"
+      timeout="300" retries="2"
+      group="test" version="1.0"
+  />
+  <dubbo:service interface="spring.guides.dubbo.service.TryService" ref="tryService"
+      timeout="1000">
+    <dubbo:method name="multi" timeout="3000" retries="0"/>
+  </dubbo:service>
 
 </beans>

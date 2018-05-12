@@ -1,12 +1,12 @@
-package spring.guides.test.junit4;
-
-import static org.assertj.core.api.Assertions.assertThat;
+package spring.guides.test.junit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestClientException;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * 基于{@link TestRestTemplate}和HTTP方式的API测试抽象基类。

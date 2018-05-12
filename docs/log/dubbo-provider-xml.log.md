@@ -34,7 +34,7 @@ Thread-{num}：基于JVM关闭钩子的Spring应用上下文关闭线程(Abstrac
 1. 关闭应用上下文
 2. 关闭所有注册中心
 3. 销毁某个注册中心
-  1. 销毁注销的Dubbo服务提供者URL
+  1. 销毁取消的Dubbo服务提供者URL
   2. 销毁取消订阅的Dubbo服务提供者URL
   3. ZooKeeper会话已关闭
   4. ZooKeeper事件处理线程关闭会话
@@ -159,13 +159,13 @@ Dubbo-Holder
 2017-10-06 00:41:40.973 [Thread-2] INFO  o.s.c.a.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@45dd4eda: startup date [Fri Oct 06 00:35:25 CST 2017]; root of context hierarchy
 # 关闭所有注册中心(zookeeper://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?group=dubbo_develop)
 2017-10-06 00:41:40.975 [DubboShutdownHook] INFO  c.a.d.r.s.AbstractRegistryFactory -  [DUBBO] Close all registries [zookeeper://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?application=spring-boot-rpc-soa-dubbo-provider&check=true&client=curator&dubbo=2.5.5&file=/Users/dannong/.dubbo/registry.cache&group=dubbo_develop&interface=com.alibaba.dubbo.registry.RegistryService&pid=8677&timestamp=1507221326667], dubbo version: 2.5.5, current host: 127.0.0.1
-# 销毁某个注册中心(zookeeper://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?group=dubbo_develop)
+# 销毁某个注册中心连接(zookeeper://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?group=dubbo_develop)
 2017-10-06 00:41:40.976 [DubboShutdownHook] INFO  c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Destroy registry:zookeeper://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?application=spring-boot-rpc-soa-dubbo-provider&check=true&client=curator&dubbo=2.5.5&file=/Users/dannong/.dubbo/registry.cache&group=dubbo_develop&interface=com.alibaba.dubbo.registry.RegistryService&pid=8677&timestamp=1507221326667, dubbo version: 2.5.5, current host: 127.0.0.1
-# 销毁注销的Dubbo服务提供者URL(dubbo://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?application=xxx&side=provider)
+# 销毁取消的Dubbo服务提供者URL(dubbo://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?application=xxx&side=provider)
 2017-10-06 00:41:40.977 [DubboShutdownHook] INFO  c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Destroy unregister url dubbo://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?accepts=0&accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-provider&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&methods=sayHello&pid=8677&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507221326673, dubbo version: 2.5.5, current host: 127.0.0.1
 # 销毁取消订阅的Dubbo服务提供者URL(provider://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?application=xxx&category=configurators&side=provider)
 2017-10-06 00:41:40.978 [DubboShutdownHook] INFO  c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Destroy unsubscribe url provider://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?accepts=0&accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-provider&category=configurators&check=false&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&methods=sayHello&pid=8677&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507221326673, dubbo version: 2.5.5, current host: 127.0.0.1
-# 在关闭时注销JMX暴露的组件
+# 在关闭时取消JMX暴露的组件
 2017-10-06 00:41:40.980 [Thread-2] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
 # 退出Curator后台操作循环
 2017-10-06 00:41:40.980 [Curator-Framework-0] INFO  o.a.c.f.imps.CuratorFrameworkImpl - backgroundOperationsLoop exiting

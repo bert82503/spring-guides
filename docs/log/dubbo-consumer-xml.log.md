@@ -33,7 +33,7 @@ DubboSharedHandler-thread-1：共享的执行器服务(WrappedChannelHandler.SHA
 1. 关闭Web应用上下文
 2. 关闭所有注册中心
 3. 销毁某个注册中心
-  1. 销毁注销的Dubbo服务消费者URL
+  1. 销毁取消的Dubbo服务消费者URL
   2. 销毁取消订阅的Dubbo服务消费者URL
   3. ZooKeeper会话已关闭
   4. ZooKeeper事件处理线程关闭会话
@@ -82,7 +82,7 @@ Dubbo-Holder
 2017-10-06 00:39:43.195 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 2017-10-06 00:39:43.195 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'webRequestLoggingFilter' to: [/*]
 2017-10-06 00:39:43.196 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'applicationContextIdFilter' to: [/*]
-# 加载本地注册中心存储文件数据(xxx.DemoService=empty://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?category=configurators&side=provider)
+# 加载注册中心本地磁盘缓存文件数据(xxx.DemoService=empty://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?category=configurators&side=provider)
 2017-10-06 00:39:43.362 [main] INFO  c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Load registry store file /Users/dannong/.dubbo/registry.cache, data: {spring.guides.dubbo.service.DemoService=empty://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?accepts=0&accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-provider&category=configurators&check=false&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&methods=sayHello&pid=8677&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507221326673}, dubbo version: 2.5.5, current host: 127.0.0.1
 ### ======= Zookeeper客户端 =======
 # 启动Zookeeper注册中心的Curator客户端
@@ -124,7 +124,7 @@ Dubbo-Holder
 2017-10-06 00:39:43.635 [main-EventThread] INFO  o.a.c.f.state.ConnectionStateManager - State change: CONNECTED
 # 收到新的配置事件(数据：{})
 2017-10-06 00:39:43.648 [main-EventThread] INFO  o.a.c.framework.imps.EnsembleTracker - New config event received: {}
-# 订阅Dubbo服务消费者URL(consumer://192.168.1.2/spring.guides.dubbo.service.DemoService?application=xxx&category=providers,configurators,routers&side=consumer)
+# 消费者订阅Dubbo服务提供者URL(consumer://192.168.1.2/spring.guides.dubbo.service.DemoService?application=xxx&category=providers,configurators,routers&side=consumer)
 2017-10-06 00:39:43.679 [main] INFO  c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Subscribe: consumer://192.168.1.2/spring.guides.dubbo.service.DemoService?application=spring-boot-rpc-soa-dubbo-consumer&category=providers,configurators,routers&dubbo=2.5.5&interface=spring.guides.dubbo.service.DemoService&methods=sayHello&pid=8680&side=consumer&timestamp=1507221583279, dubbo version: 2.5.5, current host: 192.168.1.2
 # 通知订阅Dubbo服务消费者URL(consumer://xxx)的URL列表(dubbo://xxx/xxx.DemoService?side=provider、empty://192.168.1.2/xxx.DemoService?category=configurators&side=consumer、empty://192.168.1.2/xxx.DemoService?category=routers&side=consumer)
 2017-10-06 00:39:43.698 [main] INFO  c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Notify urls for subscribe url consumer://192.168.1.2/spring.guides.dubbo.service.DemoService?application=spring-boot-rpc-soa-dubbo-consumer&category=providers,configurators,routers&dubbo=2.5.5&interface=spring.guides.dubbo.service.DemoService&methods=sayHello&pid=8680&side=consumer&timestamp=1507221583279, urls: [dubbo://192.168.1.2:20880/spring.guides.dubbo.service.DemoService?accepts=0&accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-provider&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&methods=sayHello&pid=8677&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507221326673, empty://192.168.1.2/spring.guides.dubbo.service.DemoService?application=spring-boot-rpc-soa-dubbo-consumer&category=configurators&dubbo=2.5.5&interface=spring.guides.dubbo.service.DemoService&methods=sayHello&pid=8680&side=consumer&timestamp=1507221583279, empty://192.168.1.2/spring.guides.dubbo.service.DemoService?application=spring-boot-rpc-soa-dubbo-consumer&category=routers&dubbo=2.5.5&interface=spring.guides.dubbo.service.DemoService&methods=sayHello&pid=8680&side=consumer&timestamp=1507221583279], dubbo version: 2.5.5, current host: 192.168.1.2
@@ -205,7 +205,7 @@ Dubbo-Holder
 2017-10-06 00:41:34.996 [DubboShutdownHook] INFO  c.a.d.r.s.AbstractRegistryFactory -  [DUBBO] Close all registries [zookeeper://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?application=spring-boot-rpc-soa-dubbo-consumer&check=false&client=curator&dubbo=2.5.5&file=/Users/dannong/.dubbo/registry.cache&group=dubbo_develop&interface=com.alibaba.dubbo.registry.RegistryService&pid=8680&timestamp=1507221583309], dubbo version: 2.5.5, current host: 192.168.1.2
 # 销毁某个注册中心(zookeeper://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?group=dubbo_develop)
 2017-10-06 00:41:34.997 [DubboShutdownHook] INFO  c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Destroy registry:zookeeper://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?application=spring-boot-rpc-soa-dubbo-consumer&check=false&client=curator&dubbo=2.5.5&file=/Users/dannong/.dubbo/registry.cache&group=dubbo_develop&interface=com.alibaba.dubbo.registry.RegistryService&pid=8680&timestamp=1507221583309, dubbo version: 2.5.5, current host: 192.168.1.2
-# 销毁注销的Dubbo服务消费者URL(consumer://192.168.1.2/spring.guides.dubbo.service.DemoService?application=xxx&category=consumers&side=consumer)
+# 销毁取消的Dubbo服务消费者URL(consumer://192.168.1.2/spring.guides.dubbo.service.DemoService?application=xxx&category=consumers&side=consumer)
 2017-10-06 00:41:34.997 [DubboShutdownHook] INFO  c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Destroy unregister url consumer://192.168.1.2/spring.guides.dubbo.service.DemoService?application=spring-boot-rpc-soa-dubbo-consumer&category=consumers&check=false&dubbo=2.5.5&interface=spring.guides.dubbo.service.DemoService&methods=sayHello&pid=8680&side=consumer&timestamp=1507221583279, dubbo version: 2.5.5, current host: 192.168.1.2
 # 销毁取消订阅的Dubbo服务消费者URL(consumer://192.168.1.2/spring.guides.dubbo.service.DemoService?application=xxx&category=providers,configurators,routers&side=consumer)
 2017-10-06 00:41:34.998 [DubboShutdownHook] INFO  c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Destroy unsubscribe url consumer://192.168.1.2/spring.guides.dubbo.service.DemoService?application=spring-boot-rpc-soa-dubbo-consumer&category=providers,configurators,routers&dubbo=2.5.5&interface=spring.guides.dubbo.service.DemoService&methods=sayHello&pid=8680&side=consumer&timestamp=1507221583279, dubbo version: 2.5.5, current host: 192.168.1.2
@@ -213,7 +213,7 @@ Dubbo-Holder
 2017-10-06 00:41:34.998 [Thread-3] INFO  o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase 0
 # 退出Curator后台操作循环
 2017-10-06 00:41:34.999 [Curator-Framework-0] INFO  o.a.c.f.imps.CuratorFrameworkImpl - backgroundOperationsLoop exiting
-# 在关闭时注销JMX暴露的组件
+# 在关闭时取消JMX暴露的组件
 2017-10-06 00:41:35.000 [Thread-3] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter - Unregistering JMX-exposed beans on shutdown
 2017-10-06 00:41:35.000 [Thread-3] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter - Unregistering JMX-exposed beans
 2017-10-06 00:41:35.002 [Thread-3] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown

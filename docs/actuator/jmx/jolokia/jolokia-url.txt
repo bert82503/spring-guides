@@ -1,0 +1,59 @@
+
+# ---------------------------
+# Jolokia, a JMX-HTTP bridge
+#
+# 示例：jps -lmv、jps -l
+#
+# Jolokia - Reference Documentation: https://jolokia.org/reference/html/index.html
+# Jolokia operations: https://jolokia.org/reference/html/protocol.html#jolokia-operations
+# ---------------------------
+
+
+# Getting the agent version (version)
+curl --connect-timeout 5 -m 5 http://localhost:8080/jolokia/version
+
+# Listing MBeans (list)
+# <base-url>/list/<inner path>
+http://localhost:8080/jolokia/list
+http://localhost:8080/jolokia/list/org.springframework.boot/
+http://localhost:8080/jolokia/list/Tomcat/
+
+# Reading attributes (read)
+# <base-url>/read/<mbean name>/<attribute name>/<inner path>
+# org.springframework.boot
+http://localhost:8080/jolokia/read/org.springframework.boot:name=requestMappingEndpoint,type=Endpoint
+# Tomcat
+# name="http-nio-8080",type=ThreadPool
+http://localhost:8080/jolokia/read/Tomcat:port=8080,type=ProtocolHandler
+## HTTP Connector
+http://localhost:8080/jolokia/read/Tomcat:port=8080,type=Connector
+http://localhost:8080/jolokia/read/Tomcat:name=HttpRequest1,type=RequestProcessor,worker=%22http-nio-8080%22
+http://localhost:8080/jolokia/read/Tomcat:name=HttpRequest2,type=RequestProcessor,worker=%22http-nio-8080%22
+# Tomcat核心组件
+# modelerType: org.apache.catalina.core.StandardServer
+http://localhost:8080/jolokia/read/Tomcat:type=Server
+    # modelerType: org.apache.catalina.core.StandardService
+    http://localhost:8080/jolokia/read/Tomcat:type=Service
+        # protocolHandlerClassName: org.apache.coyote.http11.Http11NioProtocol
+        http://localhost:8080/jolokia/read/Tomcat:port=8080,type=Connector
+        # modelerType: org.apache.catalina.core.StandardEngine
+        http://localhost:8080/jolokia/read/Tomcat:type=Engine
+            # modelerType: org.apache.catalina.core.StandardHost
+            # contextClass: org.apache.catalina.core.StandardContext
+            # configClass: org.apache.catalina.startup.ContextConfig
+            # catalinaBase、catalinaHome、logger、appBase
+            # appBaseFile: /webapps
+            # configBaseFile: /conf/Tomcat/localhost
+            # startStopExecutor
+            http://localhost:8080/jolokia/read/Tomcat:host=localhost,type=Host
+        # modelerType: org.apache.catalina.mapper.MapperListener
+        http://localhost:8080/jolokia/read/Tomcat:type=Mapper
+# java.lang
+# ThreadCount: 22
+http://localhost:8080/jolokia/read/java.lang:type=Threading
+# java.nio
+http://localhost:8080/jolokia/read/java.nio:name=direct,type=BufferPool
+
+# Executing JMX operations (exec)
+# <base url>/exec/<mbean name>/<operation name>/<arg1>/<arg2>/....
+curl http://localhost:8080/jolokia/exec/org.springframework.boot:type=Endpoint,name=shutdownEndpoint/shutdown

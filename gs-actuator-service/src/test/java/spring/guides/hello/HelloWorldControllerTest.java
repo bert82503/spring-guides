@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import spring.guides.test.junit4.AbstractJUnit4HttpRestTemplateTests;
+import spring.guides.test.junit.AbstractJUnitHttpRestTemplateTests;
 
 /**
  * API test of {@link HelloWorldController}.
@@ -16,14 +16,14 @@ import spring.guides.test.junit4.AbstractJUnit4HttpRestTemplateTests;
  * @author dannong
  * @since 2017年02月25日 08:25
  */
-public class HelloWorldControllerTest extends AbstractJUnit4HttpRestTemplateTests {
+public class HelloWorldControllerTest extends AbstractJUnitHttpRestTemplateTests {
 
     @Test
     public void noParam() {
         String url = toRequestUrl("/hello-world");
         ResponseEntity<Map> entity = getForEntity(url, Map.class); // LinkedHashMap
 
-        assertResponseEntity(entity, HttpStatus.OK);
+        assertResponseStatusCode(entity, HttpStatus.OK);
         Map<?, ?> response = entity.getBody();
         assertThat(response.get("content")).isEqualTo("Hello, Stranger!");
     }
@@ -36,7 +36,7 @@ public class HelloWorldControllerTest extends AbstractJUnit4HttpRestTemplateTest
         String url = toRequestUrl("/hello-world?name={name}"); // 参数占位符
         ResponseEntity<Map> entity = getForEntity(url, Map.class, "Edward"); // LinkedHashMap
 
-        assertResponseEntity(entity, HttpStatus.OK);
+        assertResponseStatusCode(entity, HttpStatus.OK);
         Map<?, ?> response = entity.getBody();
         assertThat(response.get("content")).isEqualTo("Hello, Edward!");
     }

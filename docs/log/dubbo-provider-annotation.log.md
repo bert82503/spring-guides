@@ -33,7 +33,7 @@ New I/O worker #1：Netty工作线程
 1. 关闭应用上下文
 2. 关闭所有注册中心
 3. 销毁某个注册中心
-  1. 销毁注销的Dubbo服务提供者URL
+  1. 销毁取消的Dubbo服务提供者URL
   2. 销毁取消订阅的Dubbo服务提供者URL
   3. ZooKeeper会话已关闭
   4. ZooKeeper事件处理线程关闭会话
@@ -41,7 +41,7 @@ New I/O worker #1：Netty工作线程
   1. 关闭绑定到20880端口的Netty服务器
   2. 所有客户端套接字连接都已断开，现在可以优雅地关闭(Dubbo服务器)
   3. 连接断开来自某客户端的某服务URL
-  4. 注销暴露的Dubbo服务
+  4. 取消暴露的Dubbo服务
 5. 应用上下文停止组件
 ```
 
@@ -146,11 +146,11 @@ Dubbo-Holder
 2017-10-06 17:24:27.007 [DubboShutdownHook] INFO  c.a.d.r.s.AbstractRegistryFactory -  [DUBBO] Close all registries [zookeeper://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?application=spring-boot-rpc-soa-dubbo-annotation-provider&check=true&client=curator&dubbo=2.5.5&file=/Users/dannong/.dubbo/registry.cache&group=dubbo_develop&interface=com.alibaba.dubbo.registry.RegistryService&logger=slf4j&organization=middle-ware&owner=dannong&pid=11654&timestamp=1507281533442], dubbo version: 2.5.5, current host: 127.0.0.1
 # 销毁某个注册中心(zookeeper://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?group=dubbo_develop)
 2017-10-06 17:24:27.007 [DubboShutdownHook] INFO  c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Destroy registry:zookeeper://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?application=spring-boot-rpc-soa-dubbo-annotation-provider&check=true&client=curator&dubbo=2.5.5&file=/Users/dannong/.dubbo/registry.cache&group=dubbo_develop&interface=com.alibaba.dubbo.registry.RegistryService&logger=slf4j&organization=middle-ware&owner=dannong&pid=11654&timestamp=1507281533442, dubbo version: 2.5.5, current host: 127.0.0.1
-# 销毁注销的Dubbo服务提供者URL(dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?application=xxx&side=provider)
+# 销毁取消的Dubbo服务提供者URL(dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?application=xxx&side=provider)
 2017-10-06 17:24:27.008 [DubboShutdownHook] INFO  c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Destroy unregister url dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-annotation-provider&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&logger=slf4j&methods=sayHello&organization=middle-ware&owner=dannong&pid=11654&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507281543597, dubbo version: 2.5.5, current host: 127.0.0.1
 # 销毁取消订阅的Dubbo服务提供者URL(provider://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?application=xxx&category=configurators&side=provider)
 2017-10-06 17:24:27.008 [DubboShutdownHook] INFO  c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Destroy unsubscribe url provider://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-annotation-provider&category=configurators&check=false&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&logger=slf4j&methods=sayHello&organization=middle-ware&owner=dannong&pid=11654&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507281543597, dubbo version: 2.5.5, current host: 127.0.0.1
-# 在关闭时注销JMX暴露的组件
+# 在关闭时取消JMX暴露的组件
 2017-10-06 17:24:27.009 [Thread-2] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
 # 退出Curator后台操作循环
 2017-10-06 17:24:27.009 [Curator-Framework-0] INFO  o.a.c.f.imps.CuratorFrameworkImpl - backgroundOperationsLoop exiting
@@ -166,9 +166,9 @@ Dubbo-Holder
 2017-10-06 17:24:27.025 [New I/O worker #1] WARN  c.a.d.r.transport.AbstractServer -  [DUBBO] All clients has discontected from /10.1.112.138:20880. You can graceful shutdown now., dubbo version: 2.5.5, current host: 127.0.0.1
 # 连接断开来自某客户端(/10.1.112.138:55206)的某服务URL(dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?channel.readonly.sent=true&codec=dubbo&side=provider)
 2017-10-06 17:24:27.026 [DubboSharedHandler-thread-1] INFO  c.a.d.r.protocol.dubbo.DubboProtocol -  [DUBBO] disconected from /10.1.112.138:55206,url:dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-annotation-provider&channel.readonly.sent=true&codec=dubbo&dubbo=2.5.5&generic=false&heartbeat=60000&interface=spring.guides.dubbo.service.DemoService&logger=slf4j&methods=sayHello&organization=middle-ware&owner=dannong&pid=11654&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507281543597, dubbo version: 2.5.5, current host: 127.0.0.1
-# 注销暴露的Dubbo服务(dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?side=provider)
+# 取消暴露的Dubbo服务(dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?side=provider)
 2017-10-06 17:24:27.031 [DubboShutdownHook] INFO  c.a.d.r.protocol.dubbo.DubboProtocol -  [DUBBO] Unexport service: dubbo://10.1.112.138:20880/spring.guides.dubbo.service.DemoService?accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-annotation-provider&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&logger=slf4j&methods=sayHello&organization=middle-ware&owner=dannong&pid=11654&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507281543597, dubbo version: 2.5.5, current host: 127.0.0.1
-# 注销暴露的Dubbo服务(injvm://127.0.0.1/spring.guides.dubbo.service.DemoService?side=provider)
+# 取消暴露的Dubbo服务(injvm://127.0.0.1/spring.guides.dubbo.service.DemoService?side=provider)
 2017-10-06 17:24:27.031 [DubboShutdownHook] INFO  c.a.d.r.protocol.injvm.InjvmProtocol -  [DUBBO] Unexport service: injvm://127.0.0.1/spring.guides.dubbo.service.DemoService?accesslog=true&anyhost=true&application=spring-boot-rpc-soa-dubbo-annotation-provider&dubbo=2.5.5&generic=false&interface=spring.guides.dubbo.service.DemoService&logger=slf4j&methods=sayHello&organization=middle-ware&owner=dannong&pid=11654&retries=1&side=provider&threadpool=cached&threads=100&timeout=1000&timestamp=1507281543597, dubbo version: 2.5.5, current host: 127.0.0.1
 
 # 应用进程完成退出

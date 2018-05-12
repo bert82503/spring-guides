@@ -1,0 +1,68 @@
+
+##
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.4.4.RELEASE)
+
+2017-02-05 00:03:41.373  INFO 98455 --- [           main] spring.guides.hello.GreetingApplication  : Starting GreetingApplication on dannongdembp with PID 98455 (/Users/dannong/Documents/workspace/GitHub/spring-guides/gs-rest-service/target/classes started by dannong in /Users/dannong/Documents/workspace/GitHub/spring-guides)
+2017-02-05 00:03:41.377  INFO 98455 --- [           main] spring.guides.hello.GreetingApplication  : No active profile set, falling back to default profiles: default
+2017-02-05 00:03:41.642  INFO 98455 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@49ec71f8: startup date [Sun Feb 05 00:03:41 CST 2017]; root of context hierarchy
+2017-02-05 00:03:42.980  INFO 98455 --- [           main] o.s.core.annotation.AnnotationUtils      : Failed to introspect annotations on [class org.springframework.boot.actuate.autoconfigure.EndpointWebMvcHypermediaManagementContextConfiguration]: java.lang.ArrayStoreException: sun.reflect.annotation.TypeNotPresentExceptionProxy
+2017-02-05 00:03:42.980  INFO 98455 --- [           main] o.s.core.annotation.AnnotationUtils      : Failed to introspect annotations on [class org.springframework.boot.actuate.autoconfigure.EndpointWebMvcHypermediaManagementContextConfiguration]: java.lang.ArrayStoreException: sun.reflect.annotation.TypeNotPresentExceptionProxy
+2017-02-05 00:03:45.197  INFO 98455 --- [           main] org.eclipse.jetty.util.log               : Logging initialized @5867ms
+2017-02-05 00:03:45.366  INFO 98455 --- [           main] e.j.JettyEmbeddedServletContainerFactory : Server initialized with port: 8080
+2017-02-05 00:03:45.368  INFO 98455 --- [           main] org.eclipse.jetty.server.Server          : jetty-9.3.16.v20170120
+2017-02-05 00:03:45.570  INFO 98455 --- [           main] application                              : Initializing Spring embedded WebApplicationContext
+2017-02-05 00:03:45.570  INFO 98455 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3932 ms
+2017-02-05 00:03:45.868  INFO 98455 --- [           main] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-02-05 00:03:45.873  INFO 98455 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'metricsFilter' to: [/*]
+2017-02-05 00:03:45.873  INFO 98455 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-02-05 00:03:45.873  INFO 98455 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-02-05 00:03:45.873  INFO 98455 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-02-05 00:03:45.874  INFO 98455 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-02-05 00:03:45.874  INFO 98455 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2017-02-05 00:03:45.874  INFO 98455 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'applicationContextIdFilter' to: [/*]
+2017-02-05 00:03:46.114  INFO 98455 --- [           main] o.e.jetty.server.handler.ContextHandler  : Started o.s.b.c.e.j.JettyEmbeddedWebAppContext@4390f46e{/,file:///private/var/folders/0y/kzmh046n3bqb07pwdrq_zy_r0000gn/T/jetty-docbase.909456316322351511.8080/,AVAILABLE}
+2017-02-05 00:03:46.119  INFO 98455 --- [           main] org.eclipse.jetty.server.Server          : Started @6791ms
+2017-02-05 00:03:46.736  INFO 98455 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@49ec71f8: startup date [Sun Feb 05 00:03:41 CST 2017]; root of context hierarchy
+2017-02-05 00:03:46.834  INFO 98455 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/greeting],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public spring.guides.hello.Greeting spring.guides.hello.GreetingController.greeting(java.lang.String)
+2017-02-05 00:03:46.836  INFO 98455 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-02-05 00:03:46.837  INFO 98455 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-02-05 00:03:46.886  INFO 98455 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-02-05 00:03:46.886  INFO 98455 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-02-05 00:03:46.945  INFO 98455 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-02-05 00:03:47.482  INFO 98455 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/beans || /beans.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-02-05 00:03:47.483  INFO 98455 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-02-05 00:03:47.484  INFO 98455 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/dump || /dump.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-02-05 00:03:47.488  INFO 98455 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env/{name:.*}],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2017-02-05 00:03:47.488  INFO 98455 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env || /env.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-02-05 00:03:47.489  INFO 98455 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}" onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException
+2017-02-05 00:03:47.490  INFO 98455 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics/{name:.*}],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2017-02-05 00:03:47.491  INFO 98455 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics || /metrics.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-02-05 00:03:47.494  INFO 98455 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-02-05 00:03:47.501  INFO 98455 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/trace || /trace.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-02-05 00:03:47.503  INFO 98455 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/mappings || /mappings.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-02-05 00:03:47.504  INFO 98455 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/health || /health.json],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(java.security.Principal)
+2017-02-05 00:03:47.505  INFO 98455 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/info || /info.json],methods=[GET],produces=[application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-02-05 00:03:47.650  INFO 98455 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-02-05 00:03:47.663  INFO 98455 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2017-02-05 00:03:47.857  INFO 98455 --- [           main] application                              : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-02-05 00:03:47.857  INFO 98455 --- [           main] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-02-05 00:03:47.880  INFO 98455 --- [           main] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 23 ms
+2017-02-05 00:03:47.925  INFO 98455 --- [           main] o.e.jetty.server.AbstractConnector       : Started ServerConnector@7bb0bb65{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+2017-02-05 00:03:47.929  INFO 98455 --- [           main] .s.b.c.e.j.JettyEmbeddedServletContainer : Jetty started on port(s) 8080 (http/1.1)
+2017-02-05 00:03:47.935  INFO 98455 --- [           main] spring.guides.hello.GreetingApplication  : Started GreetingApplication in 7.857 seconds (JVM running for 8.608)
+
+
+2017-02-05 00:05:33.678  INFO 98455 --- [      Thread-10] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@49ec71f8: startup date [Sun Feb 05 00:03:41 CST 2017]; root of context hierarchy
+2017-02-05 00:05:33.681  INFO 98455 --- [      Thread-10] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2017-02-05 00:05:33.684  INFO 98455 --- [      Thread-10] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-02-05 00:05:33.700  INFO 98455 --- [      Thread-10] o.e.jetty.server.AbstractConnector       : Stopped ServerConnector@7bb0bb65{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+2017-02-05 00:05:33.703  INFO 98455 --- [      Thread-10] application                              : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2017-02-05 00:05:33.704  INFO 98455 --- [      Thread-10] o.e.jetty.server.handler.ContextHandler  : Stopped o.s.b.c.e.j.JettyEmbeddedWebAppContext@4390f46e{/,file:///private/var/folders/0y/kzmh046n3bqb07pwdrq_zy_r0000gn/T/jetty-docbase.909456316322351511.8080/,UNAVAILABLE}
+
+Process finished with exit code 130

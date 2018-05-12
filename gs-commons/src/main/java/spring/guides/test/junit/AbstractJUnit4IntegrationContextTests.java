@@ -1,4 +1,4 @@
-package spring.guides.test.junit4;
+package spring.guides.test.junit;
 
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
