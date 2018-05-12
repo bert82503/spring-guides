@@ -1,12 +1,12 @@
 package spring.guides.hello;
 
-import java.util.concurrent.atomic.AtomicLong;
-
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * 问候控制器。
@@ -22,7 +22,6 @@ public class HelloWorldController {
     private static final String TEMPLATE = "Hello, %s!";
 
     private final AtomicLong counter = new AtomicLong(0L);
-
 
     @RequestMapping
     public Greeting sayHello(

@@ -27,11 +27,10 @@
     <module>spring-boot-quick-start</module>
     <module>gs-spring-boot</module>
     <module>gs-actuator-service</module>
+    <module>gs-caching</module>
     <module>gs-rest-service</module>
     <module>spring-boot-actuator-jmx</module>
     <module>spring-boot-tomcat-config</module>
-    <module>gs-testing-web</module>
-    <module>spring-boot-getting-started</module>
     <module>spring-boot-hot-swapping</module>
     <!-- RPC -->
     <module>spring-boot-rpc-soa-api</module>
@@ -40,9 +39,11 @@
     <module>spring-boot-rpc-soa-dubbo-consumer-xml</module>
     <module>spring-boot-rpc-soa-dubbo-provider-annotation</module>
     <module>spring-boot-rpc-soa-dubbo-consumer-annotation</module>
+
     <module>spring-boot-latest-stable-version</module>
-    <module>gs-caching</module>
     <module>spring-boot-http</module>
+    <module>spring-boot-getting-started</module>
+    <module>gs-testing-web</module>
   </modules>
 
   <!-- ================ 源代码管理 ================ -->

@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since 2017年01月30日 09:47
  */
 @SpringBootApplication // = @SpringBootConfiguration/@Configuration + @EnableAutoConfiguration + @ComponentScan
+@SuppressWarnings("startup-enter-point")
 public class GreetingApplication {
 
     public static void main(String[] args) {

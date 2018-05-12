@@ -17,7 +17,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-@TestPropertySource(properties = {"management.port=8090"})
+@TestPropertySource(properties = {"management.port=9080"})
 public abstract class AbstractIntegrationTests {
 
     private static final String URL_LOCALHOST = "http://localhost";

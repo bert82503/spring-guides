@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since 2017年03月09日 17:27
  */
 @SpringBootApplication
+@SuppressWarnings("startup-enter-point")
 public class HotSwappingApplication {
 
     public static void main(String[] args) {

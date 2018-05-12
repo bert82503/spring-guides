@@ -12,7 +12,7 @@ import org.springframework.cache.annotation.EnableCaching;
  */
 @SpringBootApplication
 @EnableCaching // 3. Enable caching (cache store: ConcurrentHashMap)
-@SuppressWarnings("unchecked")
+@SuppressWarnings("startup-enter-point")
 public class CacheApplication {
 
     public static void main(String[] args) {

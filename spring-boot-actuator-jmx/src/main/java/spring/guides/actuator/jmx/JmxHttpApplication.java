@@ -10,10 +10,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since 2017年02月09日 11:27
  */
 @SpringBootApplication
-public class JmxApplication {
+@SuppressWarnings("startup-enter-point")
+public class JmxHttpApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(JmxApplication.class, args);
+        SpringApplication.run(JmxHttpApplication.class, args);
     }
 
 }

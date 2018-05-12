@@ -10,10 +10,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since 2017年02月22日 20:41
  */
 @SpringBootApplication
-public class HelloWorldConfiguration {
+@SuppressWarnings("startup-enter-point")
+public class HelloWorldApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HelloWorldConfiguration.class, args);
+        SpringApplication.run(HelloWorldApplication.class, args);
     }
 
 }

@@ -4,12 +4,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * 类概述。
+ * Tomcat服务器配置示例。
  *
  * @author dannong
  * @since 2017年04月14日 23:35
  */
 @SpringBootApplication
+@SuppressWarnings("startup-enter-point")
 public class TomcatServerApplication {
 
     public static void main(String[] args) {
