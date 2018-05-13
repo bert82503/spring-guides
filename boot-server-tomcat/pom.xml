@@ -9,20 +9,15 @@
         <version>0.1.0</version>
     </parent>
 
-    <artifactId>gs-testing-web</artifactId>
+    <artifactId>boot-server-tomcat</artifactId>
     <packaging>jar</packaging>
 
-    <name>${project.artifactId}</name>
-    <description>Testing the Web Layer</description>
-    <url>https://spring.io/guides/gs/testing-web/</url>
+    <name>Tomcat with Embedded Web Servers</name>
+    <description>Configure HTTP/2</description>
+    <url>https://docs.spring.io/spring-boot/docs/current/reference/html/howto-embedded-web-servers.html</url>
 
     <dependencies>
-        <!-- Spring Boot -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-            <!-- Production ready features to help you monitor and manage your application. -->
-        </dependency>
+        <!-- ================ Spring Boot ================ -->
         <!-- Add typical dependencies for a web application -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

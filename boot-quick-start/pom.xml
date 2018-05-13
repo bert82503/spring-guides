@@ -9,20 +9,17 @@
         <version>0.1.0</version>
     </parent>
 
-    <artifactId>gs-testing-web</artifactId>
+    <artifactId>boot-quick-start</artifactId>
     <packaging>jar</packaging>
 
-    <name>${project.artifactId}</name>
-    <description>Testing the Web Layer</description>
-    <url>https://spring.io/guides/gs/testing-web/</url>
+    <name>Quick Start with Spring Boot</name>
+    <description>Takes an opinionated view of building production-ready Spring applications.</description>
+    <url>http://projects.spring.io/spring-boot/#quick-start</url>
+    <!-- Spring Initializr - Bootstrap your Spring Boot application -->
+    <!-- https://start.spring.io/ -->
 
     <dependencies>
-        <!-- Spring Boot -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-            <!-- Production ready features to help you monitor and manage your application. -->
-        </dependency>
+        <!-- ================ Spring Boot ================ -->
         <!-- Add typical dependencies for a web application -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

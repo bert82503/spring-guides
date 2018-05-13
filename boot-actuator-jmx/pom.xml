@@ -9,12 +9,12 @@
         <version>0.1.0</version>
     </parent>
 
-    <artifactId>spring-boot-tomcat-config</artifactId>
+    <artifactId>boot-actuator-jmx</artifactId>
     <packaging>jar</packaging>
 
-    <name>${project.artifactId}</name>
-    <description>EMBEDDED SERVER CONFIGURATION (ServerProperties)</description>
-    <url></url>
+    <name>Monitoring and Management over JMX</name>
+    <description>Using Jolokia for JMX over HTTP</description>
+    <url>http://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-jmx.html</url>
 
     <dependencies>
         <!-- ================ Spring Boot ================ -->
@@ -34,22 +34,5 @@
             <groupId>org.jolokia</groupId>
             <artifactId>jolokia-core</artifactId>
         </dependency>
-
-        <!-- ================ Test ================ -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <!-- Package as an executable jar -->
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 </project>

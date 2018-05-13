@@ -9,12 +9,12 @@
         <version>0.1.0</version>
     </parent>
 
-    <artifactId>spring-boot-actuator-jmx</artifactId>
+    <artifactId>boot-hot-swapping</artifactId>
     <packaging>jar</packaging>
 
-    <name>${project.artifactId}</name>
-    <description>Monitoring and management over JMX</description>
-    <url>http://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-jmx.html</url>
+    <name>Hot Swapping</name>
+    <description>Reload Java Classes without Restarting the Container</description>
+    <url>https://docs.spring.io/spring-boot/docs/current/reference/html/howto-hotswapping.html</url>
 
     <dependencies>
         <!-- ================ Spring Boot ================ -->
@@ -24,31 +24,29 @@
             <artifactId>spring-boot-starter-web</artifactId>
             <!-- Support for full-stack web development, including Tomcat and spring-webmvc. -->
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-            <!-- Production ready features to help you monitor and manage your application. -->
-        </dependency>
-        <!-- Using Jolokia for JMX over HTTP -->
-        <dependency>
-            <groupId>org.jolokia</groupId>
-            <artifactId>jolokia-core</artifactId>
-        </dependency>
 
-        <!-- ================ Test ================ -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
+        <!-- Developer tools -->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-devtools</artifactId>-->
+            <!--<optional>true</optional>-->
+        <!--</dependency>-->
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Package as an executable jar -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <dependencies>
+                    <!-- Spring Loaded -->
+                    <dependency>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>springloaded</artifactId>
+                        <version>${spring-loaded.version}</version>
+                        <!-- Reload Java Classes without Restarting the Container -->
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
