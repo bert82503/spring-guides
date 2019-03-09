@@ -6,14 +6,14 @@ package spring.guides.util;
  * @author dannong
  * @since 2017年08月30日
  */
-public final class ApplicationUtils {
+public final class ApplicationUtil {
 
-  private ApplicationUtils() {
+  private ApplicationUtil() {
     super();
   }
 
   public static String getVersion() {
-    Package pkg = ApplicationUtils.class.getPackage();
+    Package pkg = ApplicationUtil.class.getPackage();
     return pkg != null ? pkg.getImplementationVersion() : null;
   }
 
