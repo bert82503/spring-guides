@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
   <!-- ================ 父POM继承 ================ -->
   <!-- Inherit defaults from Spring Boot -->
   <!-- http://projects.spring.io/spring-boot/ -->
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.5.13.RELEASE</version>
+    <version>1.5.19.RELEASE</version>
   </parent>
-  <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.springframework</groupId>
   <artifactId>spring-guides</artifactId>
@@ -40,9 +40,6 @@
     <module>spring-boot-rpc-soa-dubbo-provider-annotation</module>
     <module>spring-boot-rpc-soa-dubbo-consumer-annotation</module>
 
-    <module>spring-boot-latest-stable-version</module>
-    <module>spring-boot-http</module>
-    <module>spring-boot-getting-started</module>
     <module>gs-testing-web</module>
   </modules>
 
@@ -54,10 +51,9 @@
   <distributionManagement>
   </distributionManagement>
 
-  <!-- ================ 属性配置 ================ -->
+  <!-- ================ 属性配置(版本号) ================ -->
   <properties>
     <!-- RPC -->
-    <!--<dubbo.version>3.2.1</dubbo.version>-->
     <dubbo.version>2.5.8</dubbo.version>
     <zookeeper.version>3.4.9</zookeeper.version>
     <!--<zookeeper.version>3.5.3-beta</zookeeper.version>-->
@@ -75,11 +71,6 @@
   <dependencyManagement>
     <dependencies>
       <!-- ================ 一方库 ================ -->
-      <dependency>
-        <groupId>com.springframework</groupId>
-        <artifactId>gs-commons</artifactId>
-        <version>${project.version}</version>
-      </dependency>
       <dependency>
         <groupId>com.springframework</groupId>
         <artifactId>service-api</artifactId>
@@ -119,13 +110,6 @@
           </exclusion>
         </exclusions>
       </dependency>
-      <!-- Dubbo Spring Boot Starter -->
-      <!-- https://github.com/apache/incubator-dubbo-spring-boot-project -->
-      <dependency>
-        <groupId>com.alibaba.boot</groupId>
-        <artifactId>dubbo-spring-boot-starter</artifactId>
-        <version>0.1.0</version>
-      </dependency>
       <!-- Apache ZooKeeper: highly reliable distributed coordination -->
       <dependency>
         <groupId>org.apache.zookeeper</groupId>
@@ -147,10 +131,10 @@
         <artifactId>curator-recipes</artifactId>
         <version>${curator.version}</version>
         <!--<exclusions>-->
-          <!--<exclusion>-->
-            <!--<groupId>org.apache.zookeeper</groupId>-->
-            <!--<artifactId>zookeeper</artifactId>-->
-          <!--</exclusion>-->
+        <!--<exclusion>-->
+        <!--<groupId>org.apache.zookeeper</groupId>-->
+        <!--<artifactId>zookeeper</artifactId>-->
+        <!--</exclusion>-->
         <!--</exclusions>-->
       </dependency>
 
@@ -270,12 +254,6 @@
       </plugin>
       <plugin>
         <artifactId>maven-deploy-plugin</artifactId>
-      </plugin>
-
-      <!-- Package as an executable jar -->
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
     </plugins>
   </build>

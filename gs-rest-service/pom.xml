@@ -18,12 +18,22 @@
     <url>https://spring.io/guides/gs/rest-service/</url>
     <!-- https://github.com/spring-guides/gs-rest-service -->
 
+    <dependencyManagement>
+        <dependencies>
+            <!-- ================ 一方库 ================ -->
+            <dependency>
+                <groupId>com.springframework</groupId>
+                <artifactId>gs-commons</artifactId>
+                <version>0.1.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
-        <!-- ================ Internal Project ================ -->
+        <!-- ================ 一方库 ================ -->
         <dependency>
             <groupId>com.springframework</groupId>
             <artifactId>gs-commons</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <!-- ================ Spring Boot ================ -->
@@ -46,4 +56,14 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Package as an executable jar -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
