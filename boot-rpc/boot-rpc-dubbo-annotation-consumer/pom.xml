@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.springframework</groupId>
+    <artifactId>boot-rpc</artifactId>
+    <version>1.0.0</version>
+  </parent>
+
+  <artifactId>boot-rpc-dubbo-annotation-consumer</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>RPC Dubbo Annotation Consumer</name>
+  <description>RPC Dubbo Annotation Consumer</description>
+
+  <dependencies>
+    <!-- ================ 一方库 ================ -->
+    <dependency>
+      <groupId>com.springframework</groupId>
+      <artifactId>boot-rpc-service</artifactId>
+    </dependency>
+
+    <!-- ================ Spring Boot ================ -->
+    <!-- Add typical dependencies for a web application -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <!-- Support for full-stack web development, including Tomcat and spring-webmvc. -->
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+      <!-- Production ready features to help you monitor and manage your application. -->
+    </dependency>
+    <!-- Using Jolokia for JMX over HTTP -->
+    <dependency>
+      <groupId>org.jolokia</groupId>
+      <artifactId>jolokia-core</artifactId>
+    </dependency>
+
+    <!-- ================ RPC ================ -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>dubbo</artifactId>
+    </dependency>
+    <!-- ZooKeeper -->
+    <dependency>
+      <groupId>org.apache.curator</groupId>
+      <artifactId>curator-recipes</artifactId>
+    </dependency>
+  </dependencies>
+</project>

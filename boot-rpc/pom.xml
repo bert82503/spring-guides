@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.springframework</groupId>
+    <artifactId>spring-guides</artifactId>
+    <version>0.1.0</version>
+  </parent>
+
+  <artifactId>boot-rpc</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+
+  <name>RPC</name>
+  <description>RPC Guides</description>
+
+  <!-- ================ 多模块项目管理 ================ -->
+  <modules>
+    <module>boot-rpc-service</module>
+
+    <!-- Dubbo -->
+    <module>boot-rpc-dubbo-annotation-provider</module>
+    <module>boot-rpc-dubbo-annotation-consumer</module>
+    <module>boot-rpc-dubbo-xml-provider</module>
+    <module>boot-rpc-dubbo-xml-consumer</module>
+  </modules>
+
+  <!-- ================ 属性配置(版本号) ================ -->
+  <properties>
+    <boot-rpc-service.version>1.0.0</boot-rpc-service.version>
+
+    <dubbo.version>2.5.8</dubbo.version>
+
+    <!--<zookeeper.version>3.4.9</zookeeper.version>-->
+    <zookeeper.version>3.5.3-beta</zookeeper.version>
+    <!--<curator.version>3.3.0</curator.version>-->
+    <curator.version>4.0.0</curator.version>
+  </properties>
+
+  <!-- ================ 依赖管理(版本一致性) ================ -->
+  <dependencyManagement>
+    <dependencies>
+      <!-- ================ 一方库 ================ -->
+      <dependency>
+        <groupId>com.springframework</groupId>
+        <artifactId>boot-rpc-service</artifactId>
+        <version>${boot-rpc-service.version}</version>
+      </dependency>
+
+
+      <!-- ================ 三方库 ================ -->
+      <!-- Dubbo: a high-performance RPC framework -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>dubbo</artifactId>
+        <version>${dubbo.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.jboss.netty</groupId>
+            <artifactId>netty</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <!-- ZooKeeper: highly reliable distributed coordination -->
+      <dependency>
+        <groupId>org.apache.zookeeper</groupId>
+        <artifactId>zookeeper</artifactId>
+        <version>${zookeeper.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.curator</groupId>
+        <artifactId>curator-recipes</artifactId>
+        <version>${curator.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>
