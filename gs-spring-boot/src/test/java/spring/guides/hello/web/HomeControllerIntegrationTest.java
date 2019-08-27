@@ -1,4 +1,4 @@
-package spring.guides.hello;
+package spring.guides.hello.web;
 
 import java.net.URL;
 
@@ -7,15 +7,15 @@ import org.junit.Test;
 import org.springframework.boot.context.embedded.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
 import spring.guides.test.junit.AbstractJUnitHttpRestTemplateTests;
 
 /**
- * Integration test of {@link HelloController}.
+ * Integration test of {@link HomeController}.
  *
- * @author dannong
  * @since 2017年10月02日
  */
-public class HelloControllerIntegrationTest extends AbstractJUnitHttpRestTemplateTests {
+public class HomeControllerIntegrationTest extends AbstractJUnitHttpRestTemplateTests {
 
   @LocalServerPort
   private int port;

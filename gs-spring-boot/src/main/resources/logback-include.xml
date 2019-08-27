@@ -1,0 +1,37 @@
+<included>
+    <!-- https://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/app.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>${LOG_HOME}/app-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!-- each file should be at most 100MB, keep 30 days worth of history, but at most 5GB -->
+            <maxFileSize>100MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>5GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date [%thread] %level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 异步日志 -->
+    <!-- https://logback.qos.ch/manual/appenders.html#AsyncAppender -->
+    <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <!-- The maximum capacity of the blocking queue. By default, queueSize is set to 256. -->
+        <!-- 更改阻塞队列的最大容量，该值会影响性能(实现类为ArrayBlockingQueue) -->
+        <queueSize>1024</queueSize>
+        <!-- 默认的，如果队列的80%已满，则会丢弃trace、debug、info级别的日志 -->
+        <!-- 不丢失日志 -->
+        <discardingThreshold>0</discardingThreshold>
+        <!-- the appender will just drop the message and will not block your application -->
+        <neverBlock>true</neverBlock>
+        <appender-ref ref="FILE"/>
+    </appender>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date [%thread] %level %logger - %msg%n</pattern>
+        </encoder>
+    </appender>
+</included>
