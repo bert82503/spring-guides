@@ -26,7 +26,8 @@
 ## 1.应用日志解读
 
 ```
-# 应用启动阶段
+# 1.应用启动阶段
+
 ## SpringBootBanner#printBanner
 ## 打印Spring框架宣传横幅，包含框架名和版本号(可自定义，把框架做成产品思维)
 
@@ -185,7 +186,8 @@
 2019-08-24 15:41:01,426 [main] INFO spring.guides.hello.HelloApplication - Started HelloApplication in 7.79 seconds (JVM running for 9.384)
 
 
-# 第一个HTTP请求
+# 2.第一个HTTP请求(FrameworkServlet延迟初始化)
+
 ## "http-nio-8080-exec-{threadNumber}"线程(AbstractEndpoint#createExecutor)
 ## Q："http-nio-8080-exec-{threadNumber}"定义在哪里？
 ## FrameworkServlet#initServletBean
@@ -200,7 +202,8 @@
 2019-08-24 15:41:12,896 [http-nio-8080-exec-1] INFO org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 25 ms
 
 
-# 应用关闭阶段
+# 3.应用关闭阶段
+
 ## "Thread-{threadNumber}"线程/JVM关闭钩子(SpringApplication#refreshContext，Thread#Thread())
 ## Q："Thread-{threadNumber}"定义在哪里？
 ## AbstractApplicationContext#doClose
@@ -229,7 +232,7 @@ Process finished with exit code 130 (interrupted by signal 2: SIGINT)
 ## 2.应用日志剖析与框架源码
 
 ```
-# 应用启动阶段
+# 1.应用启动阶段
 ## SpringBootBanner#printBanner
 ## 打印Spring框架宣传横幅，包含框架名和版本号(可自定义，把框架做成产品思维)
 
@@ -249,6 +252,7 @@ Process finished with exit code 130 (interrupted by signal 2: SIGINT)
 
 ## SpringApplication#logStartupProfileInfo
 ## 没有活动的配置文件集，回退到默认的配置文件：[defaultProfiles] (`application-default.properties`)
+## Q："default"定义在哪里？答案见：AbstractEnvironment#getDefaultProfiles => AbstractEnvironment#getReservedDefaultProfiles
 ## Q：为何是由应用源类HelloApplication打印这条日志，而不是SpringApplication？答案见：SpringApplication#getApplicationLog
 2019-08-24 15:40:54,831 [main] INFO spring.guides.hello.HelloApplication - No active profile set, falling back to default profiles: default
 
@@ -266,8 +270,9 @@ Process finished with exit code 130 (interrupted by signal 2: SIGINT)
 ## Q："8080 (http)"定义在哪里？答案见：TomcatEmbeddedServletContainer#getPortsDescription，"8080"在Tomcat#getConnector，"http"在Connector#scheme
 2019-08-24 15:40:58,023 [main] INFO org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
 
-## apache.coyote.AbstractProtocol#init，"abstractProtocolHandler.init"
+## apache.*.AbstractProtocol#init，"abstractProtocolHandler.init"
 ## 开始初始化HTTP协议处理器 [http-nio-8080/协议处理器的名称前缀-端点端口]
+## Q："http-nio-8080"定义在哪里？答案见：AbstractProtocol#getNameInternal，"http-nio"在Http11NioProtocol#getNamePrefix，"8080"在ServerProperties#port
 ## Q：为何是由Http11NioProtocol打印这条日志，而不是AbstractProtocol？答案见：Http11NioProtocol#getLog
 2019-08-24 15:40:58,052 [main] INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
 
@@ -297,7 +302,7 @@ Process finished with exit code 130 (interrupted by signal 2: SIGINT)
 2019-08-24 15:40:59,259 [localhost-startStop-1] INFO org.springframework.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 
 ## AbstractFilterRegistrationBean#configure
-## 映射filter/过滤器: '[metricsFilter/过滤器的名称]' to: [/*] (DEFAULT_URL_MAPPINGS)
+## 映射filter/过滤器: '[filterName/过滤器的名称]' to: [/*] (DEFAULT_URL_MAPPINGS)
 ## Q："metricsFilter"定义在哪里？答案见：MetricFilterAutoConfiguration#metricsFilter
 2019-08-24 15:40:59,271 [localhost-startStop-1] INFO org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'metricsFilter' to: [/*]
 ## Q："characterEncodingFilter"定义在哪里？答案见：HttpEncodingAutoConfiguration#characterEncodingFilter
@@ -341,7 +346,9 @@ Process finished with exit code 130 (interrupted by signal 2: SIGINT)
 
 ## AbstractHandlerMethodMapping.MappingRegistry#register
 ## Mapped "[mapping/RequestMappingInfo/请求映射条件的契约]" onto [handlerMethod/由方法和bean组成的处理方法]
-##
+## EndpointHandlerMapping/端点处理器映射表
+## 端点：/env，/configprops，/info，/dump，/trace，/auditevents，/heapdump，/loggers，/health，/mappings，/beans，/autoconfig，/metrics
+## Q：为何是由EndpointHandlerMapping打印这条日志，而不是AbstractHandlerMethodMapping？答案见：`Log logger = LogFactory.getLog(getClass());`
 2019-08-24 15:41:01,034 [main] INFO org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/env/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
 2019-08-24 15:41:01,034 [main] INFO org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/env || /env.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
 2019-08-24 15:41:01,035 [main] INFO org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
@@ -359,9 +366,24 @@ Process finished with exit code 130 (interrupted by signal 2: SIGINT)
 2019-08-24 15:41:01,047 [main] INFO org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
 2019-08-24 15:41:01,047 [main] INFO org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/metrics/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
 2019-08-24 15:41:01,047 [main] INFO org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/metrics || /metrics.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+
+## MBeanExporter#afterSingletonsInstantiated
+## 在启动时为JMX暴露注册的beans
+## Q：为何是由AnnotationMBeanExporter打印这条日志，而不是MBeanExporter？答案见：`Log logger = LogFactory.getLog(getClass())`
 2019-08-24 15:41:01,202 [main] INFO org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+
+## MBeanExporter#afterSingletonsInstantiated
+## EndpointMBeanExporter/端点JMX暴露者
 2019-08-24 15:41:01,208 [main] INFO org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter - Registering beans for JMX exposure on startup
+
+## DefaultLifecycleProcessor.LifecycleGroup#start
+## Starting beans in phase [0/phase]/在阶段0中开始启动beans
+## DefaultLifecycleProcessor/组件生命周期处理器策略接口的默认实现
 2019-08-24 15:41:01,213 [main] INFO org.springframework.context.support.DefaultLifecycleProcessor - Starting beans in phase 0
+
+## MBeanExporter#registerBeanInstance
+## Located managed bean 'beanKey': registering with JMX server as MBean [objectName]
+## JMX暴露的端点：auditEventsEndpoint，requestMappingEndpoint，environmentEndpoint，healthEndpoint，beansEndpoint，infoEndpoint，loggersEndpoint，metricsEndpoint，traceEndpoint，dumpEndpoint，autoConfigurationReportEndpoint，configurationPropertiesReportEndpoint
 2019-08-24 15:41:01,215 [main] INFO org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter - Located managed bean 'auditEventsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=auditEventsEndpoint]
 2019-08-24 15:41:01,242 [main] INFO org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter - Located managed bean 'requestMappingEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=requestMappingEndpoint]
 2019-08-24 15:41:01,266 [main] INFO org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter - Located managed bean 'environmentEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]
@@ -374,26 +396,67 @@ Process finished with exit code 130 (interrupted by signal 2: SIGINT)
 2019-08-24 15:41:01,324 [main] INFO org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter - Located managed bean 'dumpEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]
 2019-08-24 15:41:01,328 [main] INFO org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter - Located managed bean 'autoConfigurationReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationReportEndpoint]
 2019-08-24 15:41:01,332 [main] INFO org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter - Located managed bean 'configurationPropertiesReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]
+
+## apache.*.AbstractProtocol#start，"abstractProtocolHandler.start"
+## 开始启动HTTP协议处理器 [http-nio-8080/协议处理器的名称前缀-端点端口]
 2019-08-24 15:41:01,368 [main] INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+
+## NioSelectorPool#getSharedSelector
+## 使用共享的选择器进行servlet写/读
 2019-08-24 15:41:01,391 [main] INFO org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+
+## TomcatEmbeddedServletContainer#start
+## [Tomcat started on port(s)/Tomcat启动完成]: [端口 (scheme/协议)]
 2019-08-24 15:41:01,418 [main] INFO org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+
+## StartupInfoLogger#getStartedMessage
+## 应用启动完成 [应用名/应用源类名] in [应用启动总时间] seconds (JVM running for [JVM的运行时间])
+## Q：为何是由应用源类HelloApplication打印这条日志，而不是StartupInfoLogger？
 2019-08-24 15:41:01,426 [main] INFO spring.guides.hello.HelloApplication - Started HelloApplication in 7.79 seconds (JVM running for 9.384)
 
 
-# 第一个HTTP请求
+# 2.第一个HTTP请求(FrameworkServlet延迟初始化)
+
+## "http-nio-8080-exec-{threadNumber}"线程
+## Q："http-nio-8080-exec-{threadNumber}"定义在哪里？答案见：AbstractEndpoint#createExecutor，AbstractProtocol#init => AbstractProtocol#getNameInternal => AbstractEndpoint#setName
+## FrameworkServlet#initServletBean
+## 开始初始化Spring FrameworkServlet 'dispatcherServlet/servletName'
 2019-08-24 15:41:12,870 [http-nio-8080-exec-1] INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+
+## FrameworkServlet#initServletBean
+## FrameworkServlet 'dispatcherServlet/servletName': 初始化开始
+## Q：为何是由应用源类DispatcherServlet打印这条日志，而不是FrameworkServlet？答案见：`Log logger = LogFactory.getLog(getClass())`
 2019-08-24 15:41:12,870 [http-nio-8080-exec-1] INFO org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+
+## FrameworkServlet#initServletBean
+## FrameworkServlet 'dispatcherServlet/servletName': 初始化完成
 2019-08-24 15:41:12,896 [http-nio-8080-exec-1] INFO org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 25 ms
 
 
-# 应用关闭阶段
-2019-08-24 15:41:24,842 [Thread-5] INFO org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6e75aa0d: startup date [Sat Aug 24 15:40:55 CST 2019]; root of context hierarchy
-2019-08-24 15:41:24,844 [Thread-5] INFO org.springframework.context.support.DefaultLifecycleProcessor - Stopping beans in phase 0
-2019-08-24 15:41:24,846 [Thread-5] INFO org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter - Unregistering JMX-exposed beans on shutdown
-2019-08-24 15:41:24,847 [Thread-5] INFO org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter - Unregistering JMX-exposed beans
-2019-08-24 15:41:24,847 [Thread-5] INFO org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+# 3.应用关闭阶段
 
-Process finished with exit code 130 (interrupted by signal 2: SIGINT)
+## "Thread-{threadNumber}"线程/JVM关闭钩子
+## Q："Thread-{threadNumber}"定义在哪里？答案见：SpringApplication#refreshContext，Thread#Thread()
+## AbstractApplicationContext#doClose
+## 开始关闭 [应用上下文的显示名称/AnnotationConfigEmbeddedWebApplicationContext@6e75aa0d/基于注解配置的内嵌的web应用上下文对象]: startup date [启动时的系统时间]; [root of context hierarchy/应用上下文层次结构的根]
+2019-08-24 15:41:24,842 [Thread-5] INFO org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6e75aa0d: startup date [Sat Aug 24 15:40:55 CST 2019]; root of context hierarchy
+
+## DefaultLifecycleProcessor.LifecycleGroup#stop
+## Stopping beans in phase [0/phase]/在阶段0中开始停止beans
+## DefaultLifecycleProcessor/组件生命周期处理器策略接口的默认实现
+2019-08-24 15:41:24,844 [Thread-5] INFO org.springframework.context.support.DefaultLifecycleProcessor - Stopping beans in phase 0
+
+## MBeanExporter#destroy
+## 在关闭时注销JMX暴露的beans
+2019-08-24 15:41:24,846 [Thread-5] INFO org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter - Unregistering JMX-exposed beans on shutdown
+
+## MBeanRegistrationSupport#unregisterBeans
+## 开始注销JMX暴露的beans
+2019-08-24 15:41:24,847 [Thread-5] INFO org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter - Unregistering JMX-exposed beans
+
+## MBeanExporter#destroy
+## 在关闭时注销JMX暴露的beans
+2019-08-24 15:41:24,847 [Thread-5] INFO org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
 
 ```
 
