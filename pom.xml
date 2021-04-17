@@ -9,7 +9,8 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.5.19.RELEASE</version>
+    <version>2.4.5</version>
+    <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
   <groupId>com.springframework</groupId>
@@ -25,15 +26,16 @@
   <!-- ================ 多模块项目管理 ================ -->
   <modules>
     <module>boot-quick-start</module>
+    <module>boot-actuator-jmx</module>
+    <module>boot-server-tomcat</module>
+    <module>boot-hot-swapping</module>
+
     <module>gs-commons</module>
     <module>gs-spring-boot</module>
     <module>gs-actuator-service</module>
     <module>gs-caching</module>
     <module>gs-rest-service</module>
-    <module>boot-actuator-jmx</module>
-    <module>boot-server-tomcat</module>
-    <module>boot-hot-swapping</module>
-
+    <module>gs-reactive-rest-service</module>
     <module>gs-testing-web</module>
 
     <module>boot-rpc</module>
@@ -100,6 +102,11 @@
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.projectreactor</groupId>
+      <artifactId>reactor-test</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 

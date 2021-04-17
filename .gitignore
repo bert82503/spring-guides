@@ -1,3 +1,4 @@
+
 # gitignore Documentation - http://git-scm.com/docs/gitignore
 
 # Log
@@ -15,6 +16,9 @@ target/
 # IDEA
 .idea/
 *.iml
+
+# VS Code
+.vscode/
 
 # Eclipse
 .settings/
