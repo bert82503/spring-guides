@@ -32,7 +32,7 @@
   <properties>
     <boot-rpc-service.version>1.0.0</boot-rpc-service.version>
 
-    <dubbo.version>2.5.8</dubbo.version>
+    <dubbo.version>2.6.12</dubbo.version>
 
     <zookeeper.version>3.5.5</zookeeper.version>
     <curator.version>4.0.0</curator.version>
